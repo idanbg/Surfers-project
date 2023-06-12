@@ -1,3 +1,15 @@
-.container{
-    
+body{
+    background-color: rgba(210, 205, 205, 0.487);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+
+}
+#about-us{
+   
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(69, 68, 68);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 12px;
 }
