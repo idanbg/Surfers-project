@@ -140,6 +140,11 @@ body{
     max-height: 100%;
 
 }
-.card-body a{
-    align-self: center;
+#carouselExampleControls{
+
+    border-color: rgba(210, 205, 205, 0.487);
+    
+    background-image:url(shopping-cart/Sand-Background.avif) ;
+    
+
 }
