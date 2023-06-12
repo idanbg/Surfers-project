@@ -6,10 +6,99 @@ body{
 }
 #about-us{
    
-    font-size: 15px;
+    
+    color: rgb(69, 68, 68);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    font-family: 'Retro New Version', sans-serif;
+}
+#btn{
+    font-family: 'Retro New Version', sans-serif;
+}
+
+@import url('https://fonts.cdnfonts.com/css/retro-new-version'); 
+
+#shopping-cart{
+    
+
+   
+    
+}
+#main-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+}
+.carousel-inner{
+    border-radius: 1px;
+}
+
+#copyRight{
+    font-size: 12px;
     font-weight: 600;
     color: rgb(69, 68, 68);
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 12px;
+    font-family: 'Retro New Version', sans-serif;
+}
+
+#logo{
+   width: 50px;
+    height: 50px;
+}
+#Brand-Name{
+    float: right;
+    
+    margin-left: 10px;
+    margin-top: 20px;
+    font-family: 'Retro New Version', sans-serif;
+  
+
+}
+
+#slide-text{
+
+    
+    color: rgb(237, 235, 235);
+
+    border-radius: 12px;
+    font-family: 'Retro New Version', sans-serif;
+
+}
+#btn-placement{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: solid 3px rgb(255, 255, 255);
+    border-radius: 12px;
+}
+#about-us-prod-image{
+
+    height: 25%;
+
+
+    
+}
+
+#about-us-secondary{
+    padding: 10;
+    height: 50%;
+    border-radius: 12px;
+   margin-bottom: 20px;
+   font-family: 'Retro New Version', sans-serif;
+}
+#about-us-prod-image-disc{
+
+    font-size: 5px;
+}
+#product-Cards{
+    
+}
+#cart-logo{
+    float: right;
+    padding: 10px;
+    
 }

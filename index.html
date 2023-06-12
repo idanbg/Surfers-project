@@ -7,14 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Surfshop</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link href="https://fonts.cdnfonts.com/css/retro-new-version" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                
+  </head>
 <header>
     <div class="container-fluid">
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-               Golshims
+              <a id="Brand-aAme" class="navbar-brand" href="#">
+                <img class="img-fluid" id="logo" src="shopping-cart/Logo-Temp.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                <h1 id="Brand-Name" class="display-6">  Golshims </h1>
+             
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,7 +34,7 @@
                       <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
+                      <a class="nav-link" href="#">Shopping cart</a>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,7 +52,7 @@
                   </ul>
                   <form class="d-flex mt-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <button class="btn btn-secondary" type="submit">Search</button>
                   </form>
                 </div>
               </div>
@@ -62,38 +66,145 @@
 <br>
 <br>
 <body>
-
+<!--Main Code of LandingPage -->
     <main>
-        <!-- about us -->
-        <div id="about-us" class="container-fluid">
+  <!-- Auto-playing Dark variant Carousel with shop men & shop women buttons -->
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="shopping-cart/Carousel1.avif" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1 id="slide-text" class="display-6">WE ARE GOLSHIM </h1>
+                  <p id="slide-text" class="h6">SURFING, NOTHING MORE.</p>
+                  <div id="btn-placement" class="btn-group" role="group" aria-label="Basic example">
+
+                  <!--Shop men button-->
+                  <button id="Shop-men" type="button" class="btn btn-dark btn-lg font-monospace">Shop Men </button>
+                  <!--Shop Women button -->
+                  <button id="Shop-women" type="button" class="btn btn-dark btn-lg font-monospace">Shop Women</button>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="shopping-cart/Carousel2.avif" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                   <h1 id="slide-text" class="display-6">WE ARE GOLSHIM </h1>
+                    <p id="slide-text" class="h6">SURFING, NOTHING MORE.</p>
+                    <div id="btn-placement" class="btn-group" role="group" aria-label="Basic example">
+                  <!--Shop men button-->
+                  <button id="Shop-men" type="button" class="btn btn-dark btn-lg font-monospace">Shop Men </button>
+                  <!--Shop Women button -->
+                  <button id="Shop-women" type="button" class="btn btn-dark btn-lg font-monospace" >Shop Women</button>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="shopping-cart/Carousel3.avif" class="d-block w-100" alt="...">  
+                <div class="carousel-caption d-none d-md-block">
+                  <h1 id="slide-text" class="display-6">WE ARE GOLSHIM </h1>
+                  <p id="slide-text" class="h6">SURFING, NOTHING MORE.</p>
+                    <div id="btn-placement" class="btn-group" role="group" aria-label="Basic example">
+                    <!--Shop men button-->
+
+                 <button id="Shop-men" type="button" class="btn btn-dark btn-lg font-monospace">Shop Men </button>
+                 <!--Shop Women button -->
+                 <button id="Shop-women" type="button" class="btn btn-dark btn-lg font-monospace">Shop Women</button>
+                </div>
+              </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--About Us + image-->
+
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <h1>Surfshop</h1>
-                    <p>Surfshop is a webshop for surfers. We sell surfboards, wetsuits, surfboard wax and more. We have a wide range of products and we are always looking for new products to add to our webshop. We are a small company with a lot of passion for surfing. We are located in the Netherlands and we ship worldwide. We are always looking for new products to add to our webshop. We are a small company with a lot of passion for surfing. We are located in the Netherlands and we ship worldwide. We are always looking for new products to add to our webshop. We are a small company with a lot of passion for surfing. We are located in the Netherlands and we ship worldwide. We are always looking for new products to add to our webshop. We are a small company with a lot of passion for surfing. We are located in the Netherlands and we ship worldwide. We are always looking for new products to add to our webshop. We are a small company with a lot of passion for surfing. We are located in the Netherlands and we ship worldwide.</p>
+                    <h1 id="about-us" class="display-6 font-monospace">ABOUT US</h1>
+                    <p id="about-us-secondary" class="font-monospace">Surfshop is a webshop for surfers. We sell surfboards, wetsuits, surfboard wax and more. We have a wide range of products and we are always looking for new products to add to our webshop. We are a small company with a lot of passion for surfing. We are located in the Netherlands and we ship worldwide. </p>
                 </div>
             </div>
         </div>
-<!--carousel -->
-    <!-- shop now button + products -->
-
-    <div class="container text-center ">
-        <div class="row">
-            <div class="col-12">
-                <a href="products.php" class="btn btn-secondary">Shop now</a>
-            </div>
-        </div>
-    </div>
-
-
-    
-   
-    
-    </main>
-    <footer>
-        <div class="container text-center">
+        <br>
+        <br>
+        <br>
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <p>&copy; 2021 - Surfshop</p>
+                    <h1 id="about-us" class="display-6 font-monospace">PRODUCTS</h1>
+                </div>
+            </div>
+        </div>
+        <br>
+    
+        <div class="card-group">
+          <div class="card ">
+            <img src="shopping-cart/SurfTrunk-Temp.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title font-monospace ">Surftrek Trail Technical Elasticized Shorts</h5>
+              <p class="card-text ">69.95$</p>
+              <p class="card-text">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary font-monospace">Buy now</button>
+                  <button type="button" class="btn btn-secondary font-monospace"><span>ADD TO CART<i style="font-size: 24px;" class="fa">&#xf07a;</i></button>
+                </div>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="shopping-cart/Bikini-Temp.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title font-monospace">Summer High Kensley Underwire Bikini</h6>
+              <p class="card-text font-monospace">65.95$</p>
+              <p class="card-text font-monospace">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary font-monospace">Buy now</button>
+                  <button type="button" class="btn btn-secondary font-monospace">Add to cart</button>
+                 
+                </div>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="shopping-cart/Hat-Temp.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title font-monospace">A/Div Boonie Hat</h5>
+              <p class="card-text">39.95$</p>
+              <p class="card-text">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary font-monospace">Buy now</button>
+                  <button type="button" class="btn btn-secondary font-monospace">Add to cart</button>
+                 
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        </main>
+      </div>
+    </main>
+    <footer>
+        <div class="container text-center fixed-bottom">
+            <div class="row">
+                <div class="col-12">
+                    <p id="copyRight">&copy; 2021 - Surfshop</p>
                 </div>
             </div>
         </div>
