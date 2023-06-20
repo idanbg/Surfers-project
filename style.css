@@ -1,16 +1,12 @@
 body{
-    background-color: ivory;
+    
     font-family: Arial, Helvetica, sans-serif;
    
 
 }
 #about-us{
    
-    
-    color: rgb(69, 68, 68);
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 12px;
+ 
     font-family: 'Retro New Version', sans-serif;
 }
 #btn{
@@ -26,7 +22,15 @@ body{
     
 }
 
+#about-us-div{
+    
+  
+   
+    
+    font-family: 'Retro New Version', sans-serif;
 
+
+}
 
 
 
