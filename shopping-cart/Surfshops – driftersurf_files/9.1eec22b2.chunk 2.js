@@ -1,0 +1,1 @@
+(this.___PageFlyApp___=this.___PageFlyApp___||[]).push([[9],{830:function(_,i,t){"use strict";t.r(i),i.default=".pf-animated{animation-duration:1s;animation-fill-mode:both}"}}]);
