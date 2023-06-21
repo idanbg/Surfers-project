@@ -1,8 +1,8 @@
 {
   "name": "finalproject",
   "version": "1.0.0",
-  "description": "final project in web development class :)\r blabla",
-  "main": "main.js",
+  "description": "",
+  "main": "controller.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
