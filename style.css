@@ -1,6 +1,6 @@
 body{
     
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Retro New Version', sans-serif;
    
 
 }
@@ -214,5 +214,31 @@ body{
     
 }
 
+#checkout-form{
+   
+    margin-top: 100px;
+    border: solid 5px rgb(190, 179, 179);
+    border-radius: 12px;
 
+    
+}
+#my-bag img{
+
+    width: 100px;
+    height: 100px;
+    float: left;
+   
+   
+}
+#my-bag{
+    margin-top: 100px;
+    border: #ffffff solid 1px;
+}
+#my-bag .card{
+    border: #ffffff solid 4px;
+}
+#my-bag table{
+    
+   border: 12px lightblue solid; 
   
+}
