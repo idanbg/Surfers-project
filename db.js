@@ -1,7 +1,6 @@
-const mongo=require('mongoose');//need to call the DB
+const mongo=require('mongodb');//need to call the DB
 //const url="mongodb://localhost:27017/surfDB"//calling the wanted DB
-mongo.connect("mongodb://localhost:27017/surfDB",{useNewUrlParser: true});
-
+mongo.connect("mongodb://localhost:27017/surfDB");
 const productSchema=new mongo.Schema ({// what in the collection
     name: String,
     Price: Number,
@@ -10,7 +9,7 @@ const productSchema=new mongo.Schema ({// what in the collection
 
 const product=mongo.model("product",productSchema); // creates the collection
 
-const testing=new product({
+const prod =new product({
     name: "Shirt",
     Price: 24.99,
     Gender: "Male"

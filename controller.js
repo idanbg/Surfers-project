@@ -10,31 +10,33 @@
 const express=require('express');
 app=express();
 
-app.get("/",function(req, res){
+app.use('/', express.static("pages"));
+
+app.get("/home",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/homePage.html');
 });
-app.get("/women",function(req, res){
+app.get("/shop/women",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/women.html');
 });
-app.get("/men",function(req, res){
+app.get("/shop/men",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/men.html');
 });
-app.get("/products",function(req, res){
+app.get("/shop",function(req, res){
   //console.log(__dirname);
-  res.sendFile(__dirname + '/pages/products.html');
+  res.sendFile(__dirname + '/pages/shop.html');
 });
 app.get("/logIn",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/logIn.html');
 });
-app.get("/logIn.css",function(req, res){
+app.get("/logIn",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/logIn.css');
 });
-app.get("/style.css",function(req, res){
+app.get("/style",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/style.css');
 });
@@ -42,4 +44,3 @@ app.listen(3000,function(){
   console.log("Server is running on port 3000");
 });
 
-app.use('/', express.static("pages"));
