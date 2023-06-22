@@ -7,9 +7,11 @@
 //     , myDB = require("./db")
 //     , io = require('socket.io')(server);
 // server.listen(8080);
+
+
 const express=require('express');
 app=express();
-
+//Routes
 app.use('/', express.static("pages"));
 
 app.get("/",function(req, res){
@@ -36,12 +38,18 @@ app.get("/logIn",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/logIn.css');
 });
+app.get("/register",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/register.html');
+});
+app.get("/register",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/logIn.css');
+});
 app.get("/style",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/style.css');
 });
-
-
 
 
 
