@@ -12,7 +12,7 @@ app=express();
 
 app.use('/', express.static("pages"));
 
-app.get("/home",function(req, res){
+app.get("/",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/homePage.html');
 });
