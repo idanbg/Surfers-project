@@ -12,37 +12,8 @@ mongo.connect(url,(err)=>{
 
 
 ////////COLLECTION STRUCTURE//////////////////////
-
-/////////////////CLIENT//////////////
-const clientStructor= new mongo.Schema({
-    name:{
-
-        type:String,
-        required:[true,"Please add name"]
-    },
-    email:
-    { type:String,
-        required:[true,"Please add email"] },
-    password:
-    { type:Number,
-       min:5,
-       max:10 
-    },
-    cart: CartSchema,
-    order: OrderSchema
-});
-
-const Client=mongo.model("client",clientStructor);//naming the collection "client"
-
-// const client = new Client({
-//     name:"Idan Barhom",
-//     email: "Idan.barhom@gmail.com",
-//     password: 12345
-// });
-
-//client.save();
-
 ///////////PRODUCT///////////////
+
 const productStructor= new mongo.Schema({
     id:{type: Number,
         min:1,
@@ -55,14 +26,7 @@ const productStructor= new mongo.Schema({
 
 const Product=mongo.model("product",productStructor);//naming the collection "product"
 
-//testing
-
-// const product = new Product({
-//     id: 2,
-//     type: "Bikini",
-//     price: 45.99
-// });
-////////////////////CART////////////////
+///////////////////CART////////////////
 const CartStructor= new mongo.Schema({
     product:{type:productStructor,
         required:[true]}
@@ -93,37 +57,56 @@ const order = new Order({
     //items: cart     /// cart collection
 
 });
+/////////////////CLIENT//////////////
+const clientStructor= new mongo.Schema({
+    name:{
+
+        type:String,
+        required:[true,"Please add name"]
+    },
+    email:
+    { type:String,
+        required:[true,"Please add email"] },
+    password:
+    { type:Number,
+       min:1,
+    
+    },
+    // cart:
+    // {type:CartSturctor,
+    //     
+    // },
+    // order: OrderSchema
+});
+const Client=mongo.model("client",clientStructor);//naming the collection "client"
 
 
 
 
 
+let addClient= function(Name,Email,Password){
+   //console.log(Name);
+    //console.log(Email);
+    //console.log(Password);
+    let add = new Client({
+      name:Name,
+      email:Email,
+      password:Password
+    });
+    add.save(function(err){
+        if(err)console.error(err);
+        else
+        console.log("Client Added succesFully");
+    })
+    
+}
+
+// let logInClient=function(Name,Password){
+
+// }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-// const productSchema=new mongo.Schema ({// what in the collection
-//     name: String,
-//     Price: Number,
-//     Gender: String
-// });
-
-// const product=mongo.model("product",productSchema); // creates the collection
-
-// const prod =new product({
-//     name: "Shirt",
-//     Price: 24.99,
-//     Gender: "Male"
-// });
-
-// testing.save();
+module.exports.addClient= addClient;
