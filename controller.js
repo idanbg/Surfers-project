@@ -1,16 +1,21 @@
 //jshint esversion:6
 //creating a server
-// let express = require('express')
-//     , app = express()
-//     , http = require('http')//taking data from diffrents websites - need it for the- maps, weather ... 
-//     , server = http.createServer(app)
-//     , myDB = require("./db")
-//     , io = require('socket.io')(server);
-// server.listen(8080);
+const express = require('express')
+const app = express()
+const http = require('http')//taking data from the web. 
+const server = http.createServer(app)//creating the server web
+const myDB = require("./db")//a way to reach to db.js
+const io = require('socket.io')(server);//connecting between the server and the client
+//server.listen(3000);
 
 
-const express=require('express');
-app=express();
+
+
+
+
+
+
+
 //Routes
 app.use('/', express.static("pages"));
 
@@ -53,7 +58,7 @@ app.get("/style",function(req, res){
 
 
 
-app.listen(3000,function(){
-  console.log("Server is running on port 3000");
-});
+ app.listen(3000,function(){
+   console.log("Server is running on port 3000");
+ });
 
