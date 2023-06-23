@@ -10,10 +10,9 @@ mongo.connect(url,(err)=>{
 
 });
 
-
 ////////COLLECTION STRUCTURE//////////////////////
-///////////PRODUCT///////////////
 
+///////////PRODUCT///////////////
 const productStructor= new mongo.Schema({
     id:{type: Number,
         min:1,
@@ -84,6 +83,14 @@ const Client=mongo.model("client",clientStructor);//naming the collection "clien
 
 
 
+
+
+
+
+
+////////////////////Functions/////////////////////////////////////////////
+
+
 let addClient= function(Name,Email,Password){
    //console.log(Name);
     //console.log(Email);
@@ -102,11 +109,8 @@ let addClient= function(Name,Email,Password){
 }
 
 // let logInClient=function(Name,Password){
-
 // }
 
 
-
-
-
+///////////////EXPORTS/////////////////////////////////////
 module.exports.addClient= addClient;
