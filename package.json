@@ -17,8 +17,8 @@
     "socket.io": "^4.7.0"
   },
   "keywords": [],
-  "description": "",
   "devDependencies": {
     "bcrypt": "^5.1.0"
-  }
+  },
+  "description": ""
 }

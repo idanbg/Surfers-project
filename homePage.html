@@ -14,12 +14,12 @@
 
 
 <body>
-<!--Main Code of LandingPage -->
+
     <main>
-  <!-- Auto-playing Dark variant Carousel with shop men & shop women buttons -->
+  
   <header>
-    
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <!--Beginning of NavBar-->
+    <nav class="navbar navbar-expand fixed-top  align-items bg-info-subtle border-info-subtle text-light" >
          <div class="container-fluid">
            <a id="Brand-Name" class="navbar-brand" href="#">
              <img class="img-fluid" id="logo" src="/pics/Logo-Temp.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top" href="/">
@@ -34,16 +34,38 @@
                <li class="nav-item font-monospace">
                  <a class="nav-link font-monospace" href="/shop/men">MEN</a>
                </li>
+               <!--Women Link-->
                <li class="nav-item font-monospace">
                  <a class="nav-link font-monospace font-monospace" href="/shop/women">WOMEN</a>
                </li>
+             </ul>
+             <!-- Search Bar-->
+
+             <form class="d-flex col-9" role="search">
+              <div class="input-group">
+              <input id="seach-bar" class="form-control rounded-start-pill border-secondary-subtle info-text-primary-emphasis " type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-secondary  rounded-end-circle " type="button"><i class="bi bi-search"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg></i></button>
+            </div>
+            </form>
+        
+  <!--User-Info -->
+            <div class="collapse navbar-collapse" id="navbarScroll">
+             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                <li class="nav-item font-monospace dropdown">
                  <a class="nav-link font-monospace dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    SOMTHING
                  </a>
+               
+                
                  <ul class="dropdown-menu">
-                   <li><a class="dropdown-item font-monospace" href="#">Shops</a></li>
-                   <li><a class="dropdown-item font-monospace" href="#">Return Policy</a></li>
+                   <li><a class="dropdown-item font-monospace" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                              </svg>  My Account</a></li>
+                   <li><a class="dropdown-item font-monospace" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                  </svg>   My Orders</a></li>
                    <li><hr class="dropdown-divider"></li>
                    <li><a class="dropdown-item font-monospace" href="#">Customer Support</a></li>
                  </ul>
@@ -53,12 +75,53 @@
                <a href="/login"><button class="nav-item font-monospace" href="submit">Log In</button></a>
               </ul>
            </div>
+               <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item font-monospace dropdown">
+                    <a id="user-info" class="nav-link font-monospace dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
+                     
+                    </a>
+                    <!--Shopping Cart-->
+               <div class="dropstart">
+                <div class="dropdown-menu">
+                  <form class="px-4 py-3">
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                        <label class="form-check-label" for="dropdownCheck">
+                          Remember me
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">New around here? Sign up</a>
+                  <a class="dropdown-item" href="#">Forgot password?</a>
+                </div>
+                  </li>
+                </ul>
+               </div>
+            </div>
          
          </div>
        </nav>
 </header>
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
+<!--Main Code of LandingPage -->
+        <div id="carouselExampleDark" class="container carousel carousel slide " data-bs-ride="carousel">
+            <div class=" carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -119,9 +182,9 @@
         <br>
         <!--About Us + image-->
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
+        <div class="container ">
+            <div id="about-us-div" class="row">
+                <div  class="col-12">
                     <h1 id="about-us" class="display-6 font-monospace">ABOUT US</h1>
                     <p id="about-us-secondary" class="font-monospace">Surfshop is a webshop for surfers. We sell surfboards, wetsuits, surfboard wax and more. We have a wide range of products and we are always looking for new products to add to our webshop. We are a small company with a lot of passion for surfing. We are located in the Netherlands and we ship worldwide. </p>
                 </div>
@@ -130,16 +193,16 @@
         <br>
         <br>
         <br>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="container">
                     <h1 id="about-us" class="display-6 font-monospace">PRODUCTS</h1>
                 </div>
             </div>
         </div>
         <br>
     
-        <div class="card-group"
+        <div class="container card-group">
           <div class="card ">
             <img src="/pics/SurfTrunk-Temp.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
