@@ -49,7 +49,6 @@ const OrderStructor= new mongo.Schema({
 });
 
 const Order=mongo.model("order",productStructor);//naming the collection "product"
-mongo.find(name);
 const order = new Order({
     orderID:2,
     price:24.99,
