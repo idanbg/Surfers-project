@@ -1,10 +1,10 @@
 body{
    
-    font-family: monospace;
+    font-family: "Poppins", sans-serif;
    
 
 }
-#about-us{
+/* #about-us{
    
     
     color: rgb(69, 68, 68);
@@ -12,10 +12,10 @@ body{
     padding: 10px;
     border-radius: 12px;
     font-family: 'Retro New Version', sans-serif;
-}
-#btn{
+} */
+/* #btn{
     font-family: 'Retro New Version', sans-serif;
-}
+} */
 
 @import url('https://fonts.cdnfonts.com/css/retro-new-version'); 
 
@@ -194,4 +194,7 @@ body{
     margin-bottom: 20px;
     
     
+}
+.card-group img{
+   height: 66%;
 }
