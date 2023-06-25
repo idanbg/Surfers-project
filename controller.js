@@ -6,9 +6,9 @@ const app = express();
 const http = require('http');//taking data from the web. 
 const server = http.createServer(app);//creating the server web
 const myDB = require("./db");//a way to reach to db.js
-const Client = require("./db").Client
+//const Client = require("./db").Client
 const io = require('socket.io')(server);//connecting between the server and the client
-//server.listen(3000);
+server.listen(3000);
 
 //Routes
 app.use('/', express.static("pages"));
@@ -51,9 +51,7 @@ app.get("/style",function(req, res){
 });
 
 
- app.listen(3000,function(){
-   console.log("Server is running on port 3000");
- });
+ 
 
 
 
@@ -66,6 +64,7 @@ app.get("/style",function(req, res){
   const email=req.body.email;
   const password=req.body.password;
   addClient(name,email,password);
+  
   res.redirect("/");
   
  })
@@ -77,3 +76,5 @@ app.get("/style",function(req, res){
 //   })
 //   console.log("success");
 // }
+
+

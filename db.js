@@ -1,5 +1,5 @@
 const mongo=require('mongoose');//need to call the DB
-const url="mongodb://0.0.0.0:27017/surfDB"//calling the wanted DB
+const url="mongodb+srv://Golshim123:Golshim123@webdevproject.k2obzer.mongodb.net/surfDB"//calling the wanted DB
 console.log("hey");
  //await mongoose.connect("mongodb://localhost:27017/surfDB");
 mongo.connect(url,(err)=>{
@@ -49,7 +49,7 @@ const OrderStructor= new mongo.Schema({
 });
 
 const Order=mongo.model("order",productStructor);//naming the collection "product"
-
+mongo.find(name);
 const order = new Order({
     orderID:2,
     price:24.99,
@@ -57,6 +57,9 @@ const order = new Order({
 
 });
 /////////////////CLIENT//////////////
+//const adminStructor= new mongo.Schema
+
+
 const clientStructor= new mongo.Schema({
     name:{
 
@@ -69,7 +72,12 @@ const clientStructor= new mongo.Schema({
     password: {
     type: String,
     required: true,
-},
+    },
+    role: {
+        type: String,
+        default: 'user', // by default role is 'user'
+        enum: ['user', 'admin'] // 'role' can be either 'user' or 'admin'
+    },
 });
 const Client=mongo.model("client",clientStructor);//naming the collection "client"
 
