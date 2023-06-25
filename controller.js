@@ -25,6 +25,10 @@ app.get("/shop/men",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/men.html');
 });
+app.get("/shop/more",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/more.html');
+});
 app.get("/shop",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/shop.html');
@@ -48,6 +52,18 @@ app.get("/register",function(req, res){
 app.get("/style",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/style.css');
+});
+app.get("/men",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/men.css');
+});
+app.get("/women",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/women.css');
+});
+app.get("/more",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/more.css');
 });
 
 
