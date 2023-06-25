@@ -66,16 +66,10 @@ const clientStructor= new mongo.Schema({
     email:
     { type:String,
         required:[true,"Please add email"] },
-    password:
-    { type:Number,
-       min:1,
-    
-    },
-    // cart:
-    // {type:CartSturctor,
-    //     
-    // },
-    // order: OrderSchema
+    password: {
+    type: String,
+    required: true,
+},
 });
 const Client=mongo.model("client",clientStructor);//naming the collection "client"
 
