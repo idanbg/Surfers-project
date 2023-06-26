@@ -7,7 +7,11 @@ mongo.connect(url,(err)=>{
     console.log('MongoDB connection succeeded');
     else
     console.log('Error connection MongoDB:'+err);
+});
 
+const db = mongo.connection;
+db.on('error', (err) => {
+  console.error('Error connection MongoDB:', err);
 });
 
 ////////COLLECTION STRUCTURE//////////////////////
@@ -93,21 +97,36 @@ const Client=mongo.model("client",clientStructor);//naming the collection "clien
 
 
 let addClient= function(Name,Email,Password){
-   //console.log(Name);
-    //console.log(Email);
-    //console.log(Password);
-    let add = new Client({
-      name:Name,
-      email:Email,
-      password:Password
+   // first checking if the name or email is taken if so, we need to send a message that there is an error.
+    Client.findOne({ $or: [{ name: Name }, { email: Email }] }, function(err, existingClient) {
+    if (err) {
+      console.error(err);
+      throw err;
+    }
+
+    if (existingClient) {
+      console.log("Name or email already taken");
+      return 0;
+    }
+
+    // If the name and email are not taken, create and save the new client
+    let newClient = new Client({
+      name: Name,
+      email: Email,
+      password: Password
     });
-    add.save(function(err){
-        if(err)console.error(err);
-        else
-        console.log("Client Added succesFully");
-    })
-    
-}
+
+    newClient.save(function(err) {
+      if (err) {
+        console.error(err);
+        return 0;
+      } else {
+        console.log("Client added successfully");
+        return 1;
+      }
+    });
+});
+};
 
 // let logInClient=function(Name,Password){
 // }
