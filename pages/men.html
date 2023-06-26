@@ -57,25 +57,34 @@
    
 <!--Main Code for Men-->
 <main>
+   <!--BreadCrumb-->
+  
+   <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a class="text-dark" href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="Men">Men</li>
+    </ol>
+  </nav>
+  <!--------------->
 <!--MAIN PIC-->
-  <div id="mainImg" class="carousel carousel-slide">
-    <img class="d-block w-100" src="/pics/Men-main.jpeg"  >
+  <div id="mainImg" class="ratio carousel carousel-slide" style="--bs-aspect-ratio: 45%;">
+    <img class="d-block w-100" src="/pics/men-main (1).jpeg"  >
   </div>
 <!------------->
 <!--Prod Cards-->
-  <div id="men-prod" class="album py-5 bg-body-tertiary align-items-top">
+  <div id="men-prod" class="album py-5 bg-body-tertiary  align-items-top">
     <div class="container position-relative">
       <!--First Row-->
- <div class="row mt-4 align-items-top">
+ <div class="row mt-4  align-items-top">
         <!--First Prod-->
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="thumbnail text-center">
             <!--Prod -- IMG-->
           <img class="img-fluid" src="/pics/men-wetsuit.webp" alt="">
           <!--TEXT-->
           <div class="caption">
-            <h5 class="card-title font-monospace">Omega 3/2 Back Zip Wetsuit
-            </h5>
+            <p class="card-text font-monospace">Omega 3/2 Back Zip Wetsuit
+            </p>
             <p class="card-text font-monospace"><strong>179.95$</strong></p>        
       </div>
       <!--BUTTONS-->
@@ -89,13 +98,13 @@
       </div>
       <!--------------->
       <!--Second Prod-->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="thumbnail text-center">
           <!--Prod -- IMG-->
         <img class="img-fluid" src="/pics/men-fullwetsuit.webp" alt="">
         <!--TEXT-->
         <div class="caption">
-          <h5 class="card-title font-monospace">E-Bomb 4/3 Zip Free Hooded Wetsuit</h5>
+          <p class="card-text font-monospace">E-Bomb 4/3 Zip Free Hooded Wetsuit</h5>
           <p class="card-text font-monospace"><strong>258.99$</strong></p>        
     </div>
     <!--BUTTONS-->
@@ -109,13 +118,13 @@
     </div>
     <!--------------->
     <!--Third Prod-->
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="thumbnail text-center">
         <!--Prod -- IMG-->
       <img class="img-fluid" src="/pics/men-boardshort1.jpeg" alt="">
       <!--TEXT-->
          <div class="caption">
-            <h5 class="card-title font-monospace">Sundays Layback 17" Boardshorts</h5>
+            <p class="card-text font-monospace">Sundays Layback 17" Boardshorts</h5>
             <p class="card-text font-monospace"><strong>59.95$</strong></p>        
           </div>
        <!--BUTTONS-->
@@ -128,16 +137,36 @@
         </div>
    </div>
     <!--------------->
+    <!--Fourth Prod-->
+<div class="col-md-3">
+  <div class="thumbnail text-center">
+    <!--Prod -- IMG-->
+  <img class="img-fluid" src="/pics/men-wetsuithood.jpeg" alt="">
+  <!--TEXT-->
+  <div class="caption">
+    <p class="card-text font-monospace">2mm Absolute Wetsuit Hood</h5>
+    <p class="card-text font-monospace"><strong>39.95$</strong></p>        
+</div>
+<!--BUTTONS-->
+<div class="btn-group">
+  <button type="button" class="btn btn-dark rounded-start-pill ">Add To Cart</button>
+        <button type="button" class="btn btn-white btn-outline-dark rounded-end-circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+          <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+        </svg></button>
+</div>  
+</div>
+</div>
+<!--------------->
     <!--Second Row-->
     <div class="row mt-4 align-items-top">
       <!--First Prod-->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="thumbnail text-center">
           <!--Prod -- IMG-->
         <img class="img-fluid" src="/pics/men-boardshorts2.jpeg" alt="">
         <!--TEXT-->
         <div class="caption">
-          <h5 class="card-title font-monospace">
+          <p class="card-text font-monospace">
             Sundays Pro Performance 19" Boardshorts</h5>
           <p class="card-text font-monospace"><strong>59.95$</strong></p>        
     </div>
@@ -152,13 +181,13 @@
     </div>
     <!--------------->
     <!--Second Prod-->
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="thumbnail text-center">
         <!--Prod -- IMG-->
       <img class="img-fluid" src="/pics/men-hat1.jpeg" alt="">
       <!--TEXT-->
       <div class="caption">
-        <h5 class="card-title font-monospace">Tides Straw Lifeguard Hat</h5>
+        <p class="card-text font-monospace">Tides Straw Lifeguard Hat</h5>
         <p class="card-text font-monospace"><strong>22.95$</strong></p>        
   </div>
   <!--BUTTONS-->
@@ -172,13 +201,13 @@
   </div>
   <!--------------->
   <!--Third Prod-->
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail text-center">
       <!--Prod -- IMG-->
     <img class="img-fluid" src="/pics/men-hat2.jpeg" alt="">
     <!--TEXT-->
        <div class="caption">
-          <h5 class="card-title font-monospace">Jetty Bucket Hat</h5>
+          <p class="card-text font-monospace">Jetty Bucket Hat</h5>
           <p class="card-text font-monospace"><strong>39.95$</strong></p>        
         </div>
      <!--BUTTONS-->
@@ -190,16 +219,40 @@
     </div>  
       </div>
  </div>
+ <!--Fourth Prod-->
+<div class="col-md-3">
+  <div class="thumbnail text-center">
+    <!--Prod -- IMG-->
+  <img class="img-fluid" src="/pics/men-surfhat.jpeg" alt="">
+  <!--TEXT-->
+     <div class="caption">
+        <p class="card-text font-monospace">Surf Wetsuit Hat</h5>
+        <p class="card-text font-monospace"><strong>29.95$</strong></p>        
+      </div>
+   <!--BUTTONS-->
+   <div class="btn-group">
+    <button type="button" class="btn btn-dark rounded-start-pill ">Add To Cart</button>
+          <button type="button" class="btn btn-white btn-outline-dark rounded-end-circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+          </svg></button>
+  </div>  
+    </div>
+  </div>
+  </div>
+  
+  
+  
+  <!--------------------------->
  <!--Third Row-->
  <div class="row mt-4 align-items-top">
   <!--First Prod-->
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail text-center">
       <!--Prod -- IMG-->
     <img class="img-fluid" src="/pics/men-reefwalker.jpeg" alt="">
     <!--TEXT-->
     <div class="caption">
-      <h5 class="card-title font-monospace">
+      <p class="card-text font-monospace">
         Tahiti 2mm Reef Walker Boot</h5>
       <p class="card-text font-monospace"><strong>49.95$</strong></p>        
 </div>
@@ -213,50 +266,8 @@
 </div>
 </div>
 <!--------------->
-<!--Second Prod-->
-<div class="col-md-4">
-  <div class="thumbnail text-center">
-    <!--Prod -- IMG-->
-  <img class="img-fluid" src="/pics/men-wetsuithood.jpeg" alt="">
-  <!--TEXT-->
-  <div class="caption">
-    <h5 class="card-title font-monospace">2mm Absolute Wetsuit Hood</h5>
-    <p class="card-text font-monospace"><strong>39.95$</strong></p>        
-</div>
-<!--BUTTONS-->
-<div class="btn-group">
-  <button type="button" class="btn btn-dark rounded-start-pill ">Add To Cart</button>
-        <button type="button" class="btn btn-white btn-outline-dark rounded-end-circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-          <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-        </svg></button>
-</div>  
-</div>
-</div>
-<!--------------->
-<!--Third Prod-->
-<div class="col-md-4">
-<div class="thumbnail text-center">
-  <!--Prod -- IMG-->
-<img class="img-fluid" src="/pics/men-surfhat.jpeg" alt="">
-<!--TEXT-->
-   <div class="caption">
-      <h5 class="card-title font-monospace">Surf Wetsuit Hat</h5>
-      <p class="card-text font-monospace"><strong>29.95$</strong></p>        
-    </div>
- <!--BUTTONS-->
- <div class="btn-group">
-  <button type="button" class="btn btn-dark rounded-start-pill ">Add To Cart</button>
-        <button type="button" class="btn btn-white btn-outline-dark rounded-end-circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-          <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-        </svg></button>
-</div>  
-  </div>
-</div>
-</div>
 
 
-
-<!--------------------------->
   </main>
 
       
@@ -265,8 +276,8 @@
 
 </main>
    <!--Footer-->
-   <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+   
+    <footer class="bg-body-tertiary d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div class="col-md-4 d-flex align-items-center">
         <a id="Brand-Name" class="navbar-brand" href="/">
           <svg id="Brand-logo" xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-tsunami" viewBox="0 0 16 16">
@@ -295,7 +306,7 @@
 
   
    
-  </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
