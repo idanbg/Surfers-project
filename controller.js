@@ -47,6 +47,10 @@ app.get("/shop/men",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/men.html');
 });
+app.get("/shop/more",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/more.html');
+});
 app.get("/shop",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/shop.html');
