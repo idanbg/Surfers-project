@@ -9,9 +9,12 @@ let myDB = require("./db");//a way to reach to db.js
 //const Client = require("./db").Client
 let io = require('socket.io')(server);//connecting between the server and the client
 server.listen(8080);
+console.log("controller");
 
 io.sockets.on('connection',function(socket){//new client connection
+  
   console.log(socket.id);
+  
 
   socket.on('register',function(name,email,pw) {
      let valid=myDB.addClient(name,email,pw);
@@ -78,16 +81,16 @@ app.get("/style",function(req, res){
 
 
 
-//  const { addClient } = require("./db");
-//  app.post("/register",function(req,res){
+ const { addClient } = require("./db");
+ app.post("/register",function(req,res){
 
-//   const name=req.body.name;
-//   const email=req.body.email;
-//   const password=req.body.password;
-//   addClient(name,email,password);
-//   res.redirect("/");
+  const name=req.body.name;
+  const email=req.body.email;
+  const password=req.body.password;
+  addClient(name,email,password);
+  res.redirect("/");
   
-//  })
+ })
 // function addClient(Name,Email,Password){
 //   let instert= new Client({
 //     name:Name,
