@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,57 +13,116 @@
   </head>
 
 
-  <body class="bg-body-tertiary">
+  <body>
 
     <main>
   
- 
+  <header>
     <!--Beginning of NavBar-->
-    <header id="Header" class="p-3 bg-info-subtle text-dark font-awesome" data-bs="text-dark" >
-      <div class="container-fluid">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
-          <a href="/" class=" align-items-left mb-2 mb-lg-0 text-dark text-decoration-none">
-            <svg class="bi me-2 float start" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-tsunami" viewBox="0 0 16 16">
+    <nav class="navbar navbar-expand fixed-top  align-items bg-info-subtle border-info-subtle text-light">
+         <div class="container-fluid">
+          <!--LOGO-->
+           <a id="Brand-Name" class="navbar-brand" href="/">
+             <svg id="Brand-logo" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-tsunami" viewBox="0 0 16 16">
               <path d="M.036 12.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zm0 2a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zM2.662 8.08c-.456 1.063-.994 2.098-1.842 2.804a.5.5 0 0 1-.64-.768c.652-.544 1.114-1.384 1.564-2.43.14-.328.281-.68.427-1.044.302-.754.624-1.559 1.01-2.308C3.763 3.2 4.528 2.105 5.7 1.299 6.877.49 8.418 0 10.5 0c1.463 0 2.511.4 3.179 1.058.67.66.893 1.518.819 2.302-.074.771-.441 1.516-1.02 1.965a1.878 1.878 0 0 1-1.904.27c-.65.642-.907 1.679-.71 2.614C11.076 9.215 11.784 10 13 10h2.5a.5.5 0 0 1 0 1H13c-1.784 0-2.826-1.215-3.114-2.585-.232-1.1.005-2.373.758-3.284L10.5 5.06l-.777.388a.5.5 0 0 1-.447 0l-1-.5a.5.5 0 0 1 .447-.894l.777.388.776-.388a.5.5 0 0 1 .447 0l1 .5a.493.493 0 0 1 .034.018c.44.264.81.195 1.108-.036.328-.255.586-.729.637-1.27.05-.529-.1-1.076-.525-1.495-.426-.42-1.19-.77-2.477-.77-1.918 0-3.252.448-4.232 1.123C5.283 2.8 4.61 3.738 4.07 4.79c-.365.71-.655 1.433-.945 2.16-.15.376-.301.753-.463 1.13z"></path>
             </svg>
-          </a>
-  
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-dark">MEN</a></li>
-            <li><a href="#" class="nav-link px-2 text-dark">WOMEN</a></li>
-            <li><a href="#" class="nav-link px-2 text-dark">MORE</a></li>
-          </ul>
+           </a>
+           <div class="collapse navbar-collapse" id="navbarScroll">
+             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <!--Men Link-->
+               <li class="nav-item font-monospace">
+                 <a class="nav-link font-monospace" href="/shop/men">MEN</a>
+               </li>
+               <!--Women Link-->
+               <li class="nav-item font-monospace">
+                 <a class="nav-link font-monospace font-monospace" href="/shop/women">WOMEN</a>
+               </li>
+             </ul>
+             <!-- Search Bar-->
 
-  
-          <form class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input id="seach-bar" class="form-control rounded-start-pill border-secondary-subtle info-text-primary-emphasis " type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary  rounded-end-circle " type="button"><i class="bi bi-search"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-            </svg></i></button>
-          </form>
-  
-          <div class="btn-group text-end">
-           <a type="button" class="nav-link px-2 font-monospace" href="/login"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+             <form class="d-flex col-9" role="search">
+              <div class="input-group">
+              <input id="seach-bar" class="form-control rounded-start-pill border-secondary-subtle info-text-primary-emphasis " type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-secondary  rounded-end-circle " type="button"><i class="bi bi-search"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+              </svg></i></button>
+            </div>
+            </form>
+        
+  <!--User-Info -->
+            <div class="collapse navbar-collapse" id="navbarScroll">
+             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+               <li class="nav-item font-monospace dropdown">
+                 <a id="user-info" class="nav-link font-monospace dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                    <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"></path>
+                  </svg>
+                  
+                 </a>
+               
+                
+                 <ul class="dropdown-menu">
+                   <li><a class="dropdown-item font-monospace" href="/login"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"></path>
-           </svg> 
-          </a>
-     <a  class="nav-link px-2 font-monospace dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              </svg>  My Account</a></li>
+                   <li><a class="dropdown-item font-monospace" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
+                  </svg>   My Orders</a></li>
+                   <li><hr class="dropdown-divider"></li>
+                   <li><a class="dropdown-item font-monospace" href="#">Customer Support</a></li>
+                 </ul>
+               </li>
+               <!--Shopping Bag-->
+               <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item font-monospace dropdown">
+                    <a id="user-info" class="nav-link font-monospace dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                      
-      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-      </svg>
-                               
-       </a>
-          </div>
-        </div>
-      </div>
-      
-    </header>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+                      </svg>
+                     
+                    </a>
+                    
+               <div class="dropstart" id="cart">
+                <div class="dropdown-menu" >
+                  <form class="px-4 py-3">
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                        <label class="form-check-label" for="dropdownCheck">
+                          Remember me
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">New around here? Sign up</a>
+                  <a class="dropdown-item" href="#">Forgot password?</a>
+                </div>
+                  </div></li>
+                </ul>
+               </div>
+            </ul></div>
+         
+         </div>
+       </div></nav>
+</header>
 <!--Main Code of LandingPage -->
 <main>
  
   <!--Carousel-->
-        <div id="carouselExampleDark" class="container-fluid carousel carousel slide " data-bs-ride="carousel">
+        <div id="carouselExampleDark" class="container carousel carousel slide " data-bs-ride="carousel">
             <div class=" carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
@@ -76,11 +135,11 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h1 id="slide-text" class="display-6">WE ARE GOLSHIM </h1>
                   <p id="slide-text" class="h6">SURFING, NOTHING MORE.</p>
-                  <div div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                  <div id="btn-placement" class="btn-group" role="group" aria-label="Basic example">
                      <!--Shop men button-->
-                   <a href="/shop/men" class="btn btn-info border-light  font-monospace">SHOP MEN</a>
+                   <button href="/shop/men" class="btn btn-info text-white border-light font-monospace">SHOP MEN</button>
                      <!--Shop Women button -->
-                     <a href="/shop/women" class="btn btn-info border-light font-monospace">SHOP WOMEN</a>
+                     <button href="/shop/women" class="btn btn-info text-white border-light font-monospace">SHOP WOMEN</button>
                   </div>
                 </div>
               </div>
@@ -89,11 +148,11 @@
                 <div class="carousel-caption d-none d-md-block">
                    <h1 id="slide-text" class="display-6">WE ARE GOLSHIM </h1>
                     <p id="slide-text" class="h6">SURFING, NOTHING MORE.</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <!--Shop men button-->
-                    <a href="/shop/men" class="btn btn-info border-light font-monospace">SHOP MEN</a>
-                    <!--Shop Women button -->
-                    <a href="/shop/women" class="btn btn-info border-light font-monospace">SHOP WOMEN</a>
+                    <div id="btn-placement" class="btn-group" role="group" aria-label="Basic example">
+                  <!--Shop men button-->
+                  <button href="/shop/men" class="btn btn-info text-white border-light font-monospace">SHOP MEN</button>
+                  <!--Shop Women button -->
+                   <button href="/shop/women" class="btn btn-info text-white border-light font-monospace">SHOP WOMEN</button>
                   </div>
                 </div>
               </div>
@@ -102,11 +161,12 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h1 id="slide-text" class="display-6">WE ARE GOLSHIM </h1>
                   <p id="slide-text" class="h6">SURFING, NOTHING MORE.</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <div id="btn-placement" class="btn-group" role="group" aria-label="Basic example">
                     <!--Shop men button-->
-                    <a href="/shop/men" class="btn btn-info border-light font-monospace">SHOP MEN</a>
-                    <!--Shop Women button -->
-                    <a href="/shop/women" class="btn btn-info border-light font-monospace">SHOP WOMEN</a>
+                 
+                      <button href="/shop/men" class="btn btn-info text-white border-light font-monospace">SHOP MEN</button>
+                     <!--Shop Women button -->
+                      <button href="/shop/women" class="btn btn-info border-light text-white font-monospace">SHOP WOMEN</button>
                     </div>
               </div>
               </div>
@@ -145,9 +205,9 @@
             </div>
         </div>
         <br>
-        <div id="OtherProds " class="container card-group text-center bg-body-tertiary">
+        <div id="OtherProds" class="container card-group text-center">
           <div class="card">
-            <img  src="pics/Mikasa.webp" class="img-top" alt="...">
+            <img  src="pics/Mikasa.webp" class="img-thumbnail" alt="...">
             <div class="card-body">
               <h5 class="card-title font-monospace ">Mikasa Ball</h5>
               <p class="card-text font-monospace ">49.60$</p>
@@ -161,7 +221,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="pics/SumBum.webp" class="img-top" alt="...">
+            <img src="pics/SumBum.webp" class="img-thumbnail" alt="...">
             <div class="card-body">
               <h5 class="card-title font-monospace">SunBum - SPF 30</h5>
               <p class="card-text font-monospace">30.00$</p>
@@ -175,7 +235,7 @@
             </div>
           </div>
           <div class="card">
-            <img src="pics/Polarbox.webp" class="img-top" alt="...">
+            <img src="pics/Polarbox.webp" class="img-thumbnail" alt="...">
             <div class="card-body">
               <h5 class="card-title font-monospace">Polarbox Cooler</h5>
               <p class="card-text font-monospace">79.99$</p>
@@ -225,6 +285,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="controller.js"></script>
 </body>
 </html>
