@@ -51,6 +51,10 @@ app.get("/shop/more",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/more.html');
 });
+app.get("/shop/contact-us",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/contact-us.html');
+});
 app.get("/shop",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/shop.html');
