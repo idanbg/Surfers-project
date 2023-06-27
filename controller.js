@@ -80,6 +80,10 @@ app.get("/style",function(req, res){
   res.sendFile(__dirname + '/pages/style.css');
 });
 
+app.get("/menStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/men.css');
+});
 
  app.listen(3000,function(){
    console.log("Server is running on port 3000");
