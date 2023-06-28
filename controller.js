@@ -85,6 +85,21 @@ app.get("/menStyle",function(req, res){
   res.sendFile(__dirname + '/pages/men.css');
 });
 
+app.get("/womenStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/women.css');
+});
+
+app.get("/moreStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/more.css');
+});
+
+app.get("/contactStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/contact-us.css');
+});
+
  app.listen(3000,function(){
    console.log("Server is running on port 3000");
  });

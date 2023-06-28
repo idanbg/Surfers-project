@@ -7,15 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Surfshop</title>
     <link href="https://fonts.cdnfonts.com/css/retro-newhttps://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.-version" rel="stylesheet">
-    <link rel="stylesheet" href="shop/style">
+    <link rel="stylesheet" href="/contactStyle">
                 
   </head>
 
-  <body data-bs-theme="light">
+  <body data-bs-theme="light" style="background-image:url('/pics/golshim.jpeg');">
        
 <!--Main Code for Contact-us-->
 <main>
-    <div class="bg-img cover-container d-flex w-100 h-100 p-3 mx-auto flex-column"style="background-image:url('/pics/golshim.jpeg');" >
+    <div class="bg-img cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" >
       <header class="mb-auto">
         <div>
           <h3 class="float-md-start mt-2"> <a href="/" class=" align-items-center">
@@ -25,7 +25,7 @@
           </a></h3>
           <nav class="nav navbar  gap-3 text-light justify-content-center float-md-end">
             <div class="btn-group">
-            <input class="form-control-sm shadow bg-body-tertiary rounded-start-2 border-light" list="datalistOptions" type="search" placeholder="Search">
+            <input class="form-control-sm shadow bg-body-tertiary " list="datalistOptions" type="search" placeholder="Search">
             <datalist id="datalistOptions">
               <option value="hat">
               <option value="Swimsuit">
@@ -33,7 +33,7 @@
               <option value="Mikasa">
               <option value="Boardshorts">
             </datalist>
-            <a class="btn btn-sm shadow btn-img text-light fw-bold  border-light rounded-end-2" type="submit" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+            <a class="btn btn-sm shadow btn-img text-light fw-bold  " type="submit" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
               <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
               <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
             </svg></a>
@@ -90,8 +90,9 @@
       </div>
       </div>
       <hr>
+    </div>
       <!--Footer-->
-      <div class="container-fluid bg-light"></div>
+      <div class="bg-img container-fluid">
        <footer class="bg-light align-items-center py-3 my-4 border-top">
          <div class="row mt-4 ">
            <div class="col-6" >
@@ -125,6 +126,7 @@
            
            
        </footer>
+      </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
