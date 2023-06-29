@@ -69,7 +69,9 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   app.get("/style", function (req, res) {
     res.sendFile(__dirname + '/views/style.css');
   });
-  
+  app.get("/shop/more", function (req, res) {
+    res.sendFile(__dirname + '/views/more.html');
+  });
 
 
 
