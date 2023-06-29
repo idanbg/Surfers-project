@@ -11,35 +11,14 @@ app.use(morgan('tiny'));
 
 
 
-const myschema = new mongo.Schema({
-    nameOfProduct: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: String,
-      required: true,
-    },
-    picture: {
-      type: String,
-     required: true,
-    },
-    category: {
-      type: String,
-       required: true,
-    },
-    quantity: {
-      type: Number,
-       required: true,
-    },
-    gender:{
-        type: String
-    },
-  }, { versionKey: false });
-// Create the Product model using the schema
+const productsRoutes=require('./backend/routes/products')
+const accountsRoutes=require('./backend/routes/accounts')
+const ordersRoutes=require('./backend/routes/orders')
 
-const Product = mongo.model('Product', myschema);
 
+app.use('./backend/routes/products')
+app.use('./backend/routes/account')
+app.use('./backend/routes/orders')
 
 //with "await" when we want to find an object we first calling it , and its going to "wait" until its finding the object, and only then going to print it, we need to add the "async" in the beginning of the function.
 
@@ -48,7 +27,6 @@ app.get('/products',async (req,res)=>{
    if(!productList){
     res.status(500).json({success: false})
    }
-
    res.send(productList);
    // const product={
     //     nameOfProduct:"blabla",
