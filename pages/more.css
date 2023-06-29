@@ -1,0 +1,59 @@
+.nav .btn-group{
+    
+
+    border-radius: 360px;
+    border: #ffffff 5px solid;
+    
+   
+}
+.nav .btn-group input{
+
+    border: 5px solid #ffffff;
+    border-radius: 360px;
+
+    
+}
+.nav .btn-group a{
+    
+     
+    width: 80px;
+   
+
+   
+}
+#mainImg img{
+    height: 580px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    
+}
+.img-fluid{
+    height: 66%;
+}
+.thumbnail img{
+    width:  300px;
+    height: 300px;
+    object-fit: cover;
+}
+.thumbnail{
+   padding: 10px;
+   border: 2px solid #000000;
+   position: relative;
+   height: 450px;
+   
+}
+
+
+.thumbnail .caption{
+    font-size: small;
+    position: static;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    
+}
+
+.thumbnail .a{
+  
+    
+}

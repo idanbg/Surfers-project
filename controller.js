@@ -1,14 +1,36 @@
 //jshint esversion:6
 //creating a server
-const express = require('express');
-const bodyparser=require('body-parser');
-const app = express();
-const http = require('http');//taking data from the web. 
-const server = http.createServer(app);//creating the server web
-const myDB = require("./db");//a way to reach to db.js
+let express = require('express');
+let bodyparser=require('body-parser');
+let app = express();
+let http = require('http');//taking data from the web. 
+let server = http.createServer(app);//creating the server web
+let myDB = require("./db");//a way to reach to db.js
 //const Client = require("./db").Client
-const io = require('socket.io')(server);//connecting between the server and the client
-server.listen(3000);
+let io = require('socket.io')(server);//connecting between the server and the client
+server.listen(8080);
+console.log("controller");
+
+io.sockets.on('connection',function(socket){//new client connection
+  
+  console.log(socket.id);
+  
+
+  socket.on('register',function(name,email,pw) {
+     let valid=myDB.addClient(name,email,pw);
+
+    if(valid===1){
+      socket.emit('success-register',name);
+    }
+    else
+      socket.emit('failed-register');
+
+  })
+});
+
+
+
+
 
 //Routes
 app.use('/', express.static("pages"));
@@ -28,6 +50,10 @@ app.get("/shop/men",function(req, res){
 app.get("/shop/more",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/more.html');
+});
+app.get("/shop/contact-us",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/contact-us.html');
 });
 app.get("/shop",function(req, res){
   //console.log(__dirname);
@@ -53,21 +79,30 @@ app.get("/style",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/style.css');
 });
-app.get("/men",function(req, res){
+
+app.get("/menStyle",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/men.css');
 });
-app.get("/women",function(req, res){
+
+app.get("/womenStyle",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/women.css');
 });
-app.get("/more",function(req, res){
+
+app.get("/moreStyle",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/more.css');
 });
 
+app.get("/contactStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/contact-us.css');
+});
 
- 
+ app.listen(3000,function(){
+   console.log("Server is running on port 3000");
+ });
 
 
 
@@ -80,7 +115,6 @@ app.get("/more",function(req, res){
   const email=req.body.email;
   const password=req.body.password;
   addClient(name,email,password);
-  
   res.redirect("/");
   
  })
@@ -92,5 +126,3 @@ app.get("/more",function(req, res){
 //   })
 //   console.log("success");
 // }
-
-
