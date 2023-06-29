@@ -41,17 +41,26 @@ const myschema = new mongo.Schema({
 const Product = mongo.model('Product', myschema);
 
 
+//with "await" when we want to find an object we first calling it , and its going to "wait" until its finding the object, and only then going to print it, we need to add the "async" in the beginning of the function.
 
-app.get('/products',(req,res)=>{
-    const product={
-        nameOfProduct:"blabla",
-        price:"12$",
-        picture: "12312515.com",
-        catagory:"somthing",
-        quantity:12,
-        gender:"male"
-    }
-    res.send(product);
+app.get('/products',async (req,res)=>{
+   const productList= await Product.find();
+   if(!productList){
+    res.status(500).json({success: false})
+   }
+
+   res.send(productList);
+   // const product={
+    //     nameOfProduct:"blabla",
+    //     price:"12$",
+    //     picture: "12312515.com",
+    //     catagory:"somthing",
+    //     quantity:12,
+    //     gender:"male"
+    // }
+
+    //res.send(product);
+    
 })
 app.post('/products',(req,res)=>{
     const product=new Product({
@@ -91,3 +100,20 @@ app.listen(3400,()=>{
 
 
 
+
+
+
+// const product=new Product({
+//     nameOfProduct: req.body.name,
+//     price: req.body.price,
+//     category: req.body.category,
+//     quantity: req.body.quantity,
+// })
+// product.save().then((createdProduct=>{
+//     res.status(201).json(createdProduct)
+// })).catch((err)=>{
+//     res.status(500).json({
+//         error:err,
+//         success:false
+//     })
+// })

@@ -1,10 +1,9 @@
-//jshint esversion:6
 //creating a server
 const express = require('express');
 const bodyparser=require('body-parser');
 const app = express();
 const http = require('http');//taking data from the web. 
-const myDB = require("./backend/db");//a way to reach to db.js
+const myDB = require("./backend/config/db");//a way to reach to db.js
 app.set('view engine', 'ejs');
 
 app.listen(3000,()=>{
@@ -56,7 +55,7 @@ app.get("/style",function(req, res){
 
 
 
- const { addClient } = require("./backend/db");
+ const { addClient } = require("./backend/config/db");
  app.post("/register",function(req,res){
 
   const name=req.body.name;

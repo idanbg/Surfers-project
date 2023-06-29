@@ -1,32 +1,30 @@
+require('dotenv').config();
+var express = require("express");
+//var path = require("path");
+var connectDB = require("./backend/config/db");
 
- const io=require("socket.io")(3000)//,{
+// connect to db
+connectDB();
+
+// Init app
+app = express();
+
+// set ejs engine
+//app.set("frontend", path.join(__dirname, "frontend"));
+app.set("view engine", "ejs");
+
+// Set folders
+app.use(express.static(__dirname + '/views/public'));
+// Set Routers
+var pages = require('./Backend/config/routePages');
+app.use('/', pages);
+// Start Server
+const port = 3300;
+app.listen(port,function(){
+    console.log("Server started on port", port);
+});
+
   
-// })
-//  io.on("connection",socket=>{
-//    console.log(socket.id);
-//  })
-// console.log("modle.js")
-//$=document.querySelector
-// socket.on('success-register', function(name) {
-//     console.log("modle.js")
-//     $('#cart').empty().append('<div class="dropstart" id="cart"> <div class="dropdown-menu"><form id="cart"></form></div></div>');
-//     $('#user-name').text('Hello ' + name);
-//   });
-//   window.location.href = "/";
-//  $(function() {
-
-// $('#signUp').click(function (){
-
-//     const name = ($('#name').val());
-//     console.log(name);
-//     const email = $('#email').val();
-//     console.log(email);
-//     const password = $('#password').val();
-//     console.log(password);
-    
-//     socket.emit('register',name,email,password);
-// })
-// })
 
 
 
