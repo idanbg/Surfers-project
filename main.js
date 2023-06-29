@@ -17,7 +17,7 @@ const productsRouts = require('./backend/routs/products');
 const accountsRouts = require('./backend/routs/accounts');
 const ordersRouts = require('./backend/routs/orders');
 const orderItemsRouts=require('./backend/routs/orderitems')
-
+console.log("hello");
 app.use("/products", productsRouts);
 app.use("/accounts", accountsRouts);
 app.use("/orders", ordersRouts);
