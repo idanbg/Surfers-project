@@ -51,6 +51,10 @@ app.get("/shop/more",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/more.html');
 });
+app.get("/shop/contact-us",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/contact-us.html');
+});
 app.get("/shop",function(req, res){
   //console.log(__dirname);
   res.sendFile(__dirname + '/pages/shop.html');
@@ -76,6 +80,25 @@ app.get("/style",function(req, res){
   res.sendFile(__dirname + '/pages/style.css');
 });
 
+app.get("/menStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/men.css');
+});
+
+app.get("/womenStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/women.css');
+});
+
+app.get("/moreStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/more.css');
+});
+
+app.get("/contactStyle",function(req, res){
+  //console.log(__dirname);
+  res.sendFile(__dirname + '/pages/contact-us.css');
+});
 
  app.listen(3000,function(){
    console.log("Server is running on port 3000");
