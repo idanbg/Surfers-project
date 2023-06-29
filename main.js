@@ -22,15 +22,15 @@ const myschema = new mongo.Schema({
     },
     picture: {
       type: String,
-      required: true,
+     required: true,
     },
     category: {
       type: String,
-      required: true,
+       required: true,
     },
     quantity: {
       type: Number,
-      required: true,
+       required: true,
     },
     gender:{
         type: String
@@ -44,8 +44,12 @@ const Product = mongo.model('Product', myschema);
 
 app.get('/products',(req,res)=>{
     const product={
-        id:1,
-        name:"blabla",
+        nameOfProduct:"blabla",
+        price:"12$",
+        picture: "12312515.com",
+        catagory:"somthing",
+        quantity:12,
+        gender:"male"
     }
     res.send(product);
 })
@@ -64,10 +68,6 @@ app.post('/products',(req,res)=>{
             success:false
         })
     })
-    console.log(newProduct);
-    res.send(newProduct);
-   
-    
 })
 
 mongo.connect(url)
