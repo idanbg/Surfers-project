@@ -25,7 +25,11 @@ app.use("/ordersitems",orderitemsRouts);
 
 
 
-mongo.connect(url)
+mongo.connect(url,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
+    dbName:'surfDB'
+})
 .then(()=>{
     console.log('DB Connection Success!')
 })

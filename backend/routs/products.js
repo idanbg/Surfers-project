@@ -15,10 +15,12 @@ router.get('/',async(req,res)=>{
 
 router.post('/',(req,res)=>{
         const product=new Product({
-             nameOfProduct: req.body.name,
+             name: req.body.name,
              price: req.body.price,
+             picture:req.body.picture,
              category: req.body.category,
              quantity: req.body.quantity,
+             gender:req.body.gender
          })
          product.save().then((createdProduct=>{
              res.status(201).json(createdProduct)
