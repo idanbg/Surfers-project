@@ -3,16 +3,33 @@ const express=require('express')
 const router=express.Router();
 
 
-router.get('/products',async(req,res)=>{
+router.get('/',async(req,res)=>{
     console.log("heyyyyy");
-    const somthing=await Product.find();
+    const product=await Product.find();
 
-    if(!somthing){
+    if(!product){
         res.status(500).json({success:false})
     }
-    res.send(somthing);
+    res.send(product);
 })
 
+router.post('/',(req,res)=>{
+        const product=new Product({
+             nameOfProduct: req.body.name,
+             price: req.body.price,
+             category: req.body.category,
+             quantity: req.body.quantity,
+         })
+         product.save().then((createdProduct=>{
+             res.status(201).json(createdProduct)
+         })).catch((err)=>{
+             res.status(500).json({
+                 error:err,
+               success:false
+             })
+        })
+    })
+    
 
 
 

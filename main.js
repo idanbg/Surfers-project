@@ -18,10 +18,10 @@ const ordersRouts=require('./backend/routs/orders')
 const orderitemsRouts=require('./backend/routs/orderitems')
 
 
-app.use("/backend/routs/products",productsRouts);
-app.use("/backend/routs/accounts",accountsRouts);
-app.use(`http://localhost:3400/backend/routs/orders`,ordersRouts);
-app.use(`/http://localhost:3400/backend/routs/ordersitems`,orderitemsRouts);
+app.use("/products",productsRouts);
+app.use("/accounts",accountsRouts);
+app.use("/orders",ordersRouts);
+app.use("/ordersitems",orderitemsRouts);
 
 
 
