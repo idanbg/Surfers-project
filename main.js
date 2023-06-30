@@ -79,6 +79,13 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   app.get("/shop/more", function (req, res) {
     res.sendFile(__dirname + '/views/more.html');
   });
+  app.get("/Logstyle", function (req, res) {
+    res.sendFile(__dirname + '/views/log.css');
+  });
+  app.get("/Regstyle", function (req, res) {
+    res.sendFile(__dirname + '/views/reg.css');
+  });
+
 
 app.listen(3400,()=>{
     console.log("server is running http://localhost3400");
