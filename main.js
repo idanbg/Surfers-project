@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const path=require('path');
 const url = "mongodb+srv://Golshim123:Golshim123@webdevproject.k2obzer.mongodb.net/surfDB";
 // Serve static files from the 'public' folder
 app.use(express.static('views'));
@@ -11,18 +12,22 @@ app.use(express.static('views'));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 // Routes
 const productsRouts = require('./backend/routs/products');
 const usersRouts = require('./backend/routs/users');
 const ordersRouts = require('./backend/routs/orders');
 const orderItemsRouts=require('./backend/routs/orderitems')
+const womenRouts=require('./backend/routs/women')
 
 console.log("hello");
+
 app.use("/products", productsRouts);
 app.use("/user", usersRouts);
 app.use("/orders", ordersRouts);
 app.use("/orderitems", orderItemsRouts);
+app.use("/shop/women", womenRouts);
 
 // MongoDB Connection
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
