@@ -18,13 +18,14 @@ app.set('views', path.join(__dirname, 'views'));
 const productsRouts = require('./backend/routs/products');
 const usersRouts = require('./backend/routs/users');
 const ordersRouts = require('./backend/routs/orders');
-const orderItemsRouts=require('./backend/routs/orderitems')
-const womenRouts=require('./backend/routs/women')
+const orderItemsRouts=require('./backend/routs/orderitems');
+const womenRouts=require('./backend/routs/women');
 
 console.log("hello");
 
 app.use("/products", productsRouts);
-app.use("/user", usersRouts);
+app.use("/login", usersRouts);
+app.use("/register", usersRouts);
 app.use("/orders", ordersRouts);
 app.use("/orderitems", orderItemsRouts);
 app.use("/shop/women", womenRouts);
