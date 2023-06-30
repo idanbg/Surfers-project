@@ -77,7 +77,7 @@ const products=[
         "gender":"male" 
     },//
     {
-        "name": "spring Fever Long Sleeve Spring Suit" ,
+        "name": "Spring Fever Long Sleeve Spring Suit" ,
         "price": 149.95 ,
         "picture": "./views/pics/women-springsuit.jpeg",
         "category":"Wetsuits" ,
@@ -164,8 +164,14 @@ const products=[
         "picture":"./views/pics/Polarbox.webp" ,
         "category":"More" ,
         "quantity":99 
-    }//
-    
+    },//
+    {
+        "name":"Sun Trip Tiki One-Piece Swimsuit" ,
+        "price": 109.95,
+        "picture":"views/pics/Sun-Trip.jpeg" ,
+        "category":"Female" ,
+        "quantity":80
+    }
     ]
 
 
