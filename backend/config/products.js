@@ -305,6 +305,45 @@ const products=[
         "category":"more" ,
         "quantity":99
     },
+    {
+        "name":"Beach Umbrella"  , 
+        "price": 120.95,
+        "picture":"views/pics/Umbrella.webp" ,
+        "category":"more" ,
+        "quantity":99
+    },
+    {
+        "name":"Kids Dive Set Medium"  , 
+        "price": 52.50,
+        "picture":"views/pics/kid-dive.webp" ,
+        "category":"more" ,
+        "quantity":99
+    },
+    {
+        "name":"Ride With Me Surfboard Float"  , 
+        "price": 28.50,
+        "picture":"views/pics/Kids-Surf.webp" ,
+        "category":"more" ,
+        "quantity":99
+    },
+    {
+        "name":"Beach Cooler Box Sounds"  , 
+        "price": 105.50,
+        "picture":"views/pics/cooler.webp" ,
+        "category":"more" ,
+        "quantity":99
+    },
+    {
+        "name":"Luxe Beach & Picnic Blanket"  , 
+        "price": 75.50,
+        "picture":"views/pics/beach blanket.webp" ,
+        "category":"more" ,
+        "quantity":99
+    },
+
+
+
+
 
 
 
