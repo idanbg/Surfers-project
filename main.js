@@ -13,7 +13,8 @@ app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
+app.set("frontend", path.join(__dirname, "frontend"));
 // Routes
 const productsRouts = require('./backend/routs/products');
 const usersRouts = require('./backend/routs/users');
