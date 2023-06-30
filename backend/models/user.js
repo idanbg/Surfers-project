@@ -32,15 +32,15 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-userSchema.virtual('id').get(function(){
-    return this._id.toHexString();
-})
-userSchema.set('toJSON',{
+//userSchema.virtual('id').get(function(){ // to get the id of the user "id" insead of - "_id"
+    //return this._id.toHexString();
+//})
+//userSchema.set('toJSON',{//enable the virtual of the schema
     virtuals:true
-})
+//})
 // Create the user model using the schema
 const User=mongoose.model("users",userSchema);
 
 // Export the user model
 module.exports = User;
-//module.exports= accountSchema;
+//module.exports= userSchema;
