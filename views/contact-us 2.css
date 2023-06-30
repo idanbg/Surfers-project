@@ -1,0 +1,38 @@
+.nav .btn-group{
+    
+
+    border-radius: 360px;
+    border: #ffffff 5px solid;
+    
+   
+}
+.nav .btn-group input{
+
+    border: 5px solid #ffffff;
+    border-radius: 360px;
+
+    
+}
+.nav .btn-group a{
+    
+     
+    width: 80px;
+   
+
+   
+}
+
+.modal-content{
+
+    background-color: #ffffff;
+    border-radius: 360px;
+    border: 5px solid #ffffff;
+    width: 66%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 60px;
+    
+
+}
