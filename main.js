@@ -24,7 +24,7 @@ const womenRouts=require('./backend/routs/women');
 console.log("hello");
 
 app.use("/products", productsRouts);
-app.use("/login", usersRouts);
+app.use("/users", usersRouts);
 app.use("/register", usersRouts);
 app.use("/orders", ordersRouts);
 app.use("/orderitems", orderItemsRouts);
@@ -82,6 +82,13 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   app.get("/shop/shop1", function (req, res) {
     res.sendFile(__dirname + '/views/shop1.html');
   });
+  app.get("/Logstyle", function (req, res) {
+    res.sendFile(__dirname + '/views/log.css');
+  });
+  app.get("/Regstyle", function (req, res) {
+    res.sendFile(__dirname + '/views/reg.css');
+  });
+
 
 app.listen(3400,()=>{
     console.log("server is running http://localhost3400");
