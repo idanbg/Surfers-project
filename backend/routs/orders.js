@@ -14,6 +14,22 @@ router.get('/',async(req,res)=>{
 })
 
 
+// router.post('/',async(req,res)=>{
+//     let order= new Order({
+//         orderItems: [{
+           
+//         }],
+//         status: ,
+            
+//         totalPrice: ,
+            
+//         user: ,
+        
+//         dateOrdered: ,
+//     })
+// })
+
+
 
 
 module.exports=router;

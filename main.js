@@ -14,12 +14,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 const productsRouts = require('./backend/routs/products');
-const accountsRouts = require('./backend/routs/accounts');
+const usersRouts = require('./backend/routs/users');
 const ordersRouts = require('./backend/routs/orders');
 const orderItemsRouts=require('./backend/routs/orderitems')
+
 console.log("hello");
 app.use("/products", productsRouts);
-app.use("/accounts", accountsRouts);
+app.use("/user", usersRouts);
 app.use("/orders", ordersRouts);
 app.use("/orderitems", orderItemsRouts);
 
@@ -72,13 +73,6 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   app.get("/shop/more", function (req, res) {
     res.sendFile(__dirname + '/views/more.html');
   });
-
-
-
-
-
-
-
 
 app.listen(3400,()=>{
     console.log("server is running http://localhost3400");

@@ -12,6 +12,13 @@ router.get('/',async(req,res)=>{
     }
     res.send(somthing);
 })
+//  router.post('/',async(req,res)=>{
+//     let order= new Order({
+//         quantity: 
+//         product: 
+            
+//  })
+
 
 
 

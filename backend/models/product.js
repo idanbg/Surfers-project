@@ -23,7 +23,8 @@ const myschema = new mongoose.Schema({
       required: true,
     },
     gender:{
-        type: String
+        type: String,
+        // enum:1,2,3,
     },
   }, { versionKey: false });
 // Create the Product model using the schema

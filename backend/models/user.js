@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 console.log("hey");
 // Define the user schema
-const accountSchema= new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -14,7 +14,6 @@ const accountSchema= new mongoose.Schema({
         type: String,
         required: true,
     },
-
     city:{
          type:String,
          required:true
@@ -22,18 +21,26 @@ const accountSchema= new mongoose.Schema({
     street:{
         type:String,
         required:true
-        },
+    },
     streetNum:{
          type:Number,
          required:true
-       },
+    },
     permission: {
-        type: Number  // "0" for user, "1" client
-    },
+        type: Number,
+        default:0  // "0" for user, "1" admin
+    },
 });
 
+userSchema.virtual('id').get(function(){
+    return this._id.toHexString();
+})
+userSchema.set('toJSON',{
+    virtuals:true
+})
 // Create the user model using the schema
-const Account=mongoose.model("accounts",accountSchema);
+const User=mongoose.model("users",userSchema);
 
 // Export the user model
-module.exports = Account;
+module.exports = User;
+//module.exports= accountSchema;
