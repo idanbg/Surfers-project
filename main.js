@@ -24,7 +24,7 @@ const womenRouts=require('./backend/routs/women');
 console.log("hello");
 
 app.use("/products", productsRouts);
-app.use("/login", usersRouts);
+app.use("/users", usersRouts);
 app.use("/register", usersRouts);
 app.use("/orders", ordersRouts);
 app.use("/orderitems", orderItemsRouts);
