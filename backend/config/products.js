@@ -169,9 +169,148 @@ const products=[
         "name":"Sun Trip Tiki One-Piece Swimsuit" ,
         "price": 109.95,
         "picture":"views/pics/Sun-Trip.jpeg" ,
-        "category":"Female" ,
+        "category":"female" ,
         "quantity":80
-    }
+    },
+    {
+        "name":"Beach Vibes Beach Cover-Up" ,
+        "price": 59.95,
+        "picture":"views/pics/beach-coverup.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"Right On Long Sleeve Shirt" ,
+        "price": 69.95,
+        "picture":"views/pics/right-on.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"Day Tripper Elastic Shorts" ,
+        "price": 45.95,
+        "picture":"views/pics/Day-Tripper.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"New Waves 2 Elastic Waist Pants" ,
+        "price": 49.95,
+        "picture":"views/pics/New-Waves.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"Paradise Cove Maxi Dress" ,
+        "price": 99.95,
+        "picture":"views/pics/Maxi-Dress.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"Shoreline Sands Sweatshirt" ,
+        "price": 59.95,
+        "picture":"views/pics/Sweatshirt.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"So Right Sarong" ,
+        "price": 39.95,
+        "picture":"views/pics/So-Right.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"Bright Side Carry Tote Bag" ,
+        "price": 55.95,
+        "picture":"views/pics/Side-Carry.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"Loveland 2 Kimono Beach Cover Up" ,
+        "price": 59.95,
+        "picture":"views/pics/kimono.jpeg" ,
+        "category":"female" ,
+        "quantity":99
+    },
+    {
+        "name":"All Day Airlite Performance 19 Boardshorts" ,
+        "price": 65.95,
+        "picture":"views/pics/all-day.jpeg" ,
+        "category":"male" ,
+        "quantity":99
+    },
+    {
+        "name":"Pilpeled Tribe Snapback Headwear Clipback" , 
+        "price": 30.95,
+        "picture":"views/pics/Pilpeled-cap.jpeg" ,
+        "category":"male" ,
+        "quantity":99
+    },
+    {
+        "name":"Sundays Vacay Short Sleeve Shirt" , 
+        "price": 59.95,
+        "picture":"views/pics/sundays.jpeg" ,
+        "category":"male" ,
+        "quantity":99
+    },
+    {
+        "name":"Boys Lary Cord Shorts"  , 
+        "price": 39.95,
+        "picture":"views/pics/cord.jpeg" ,
+        "category":"male" ,
+        "quantity":99
+    },
+    {
+        "name":"Arch Mesh UPF 50 Long Sleeve Surf Tee"  , 
+        "price": 39.95,
+        "picture":"views/pics/Arch.jpeg" ,
+        "category":"male" ,
+        "quantity":99
+    },
+    {
+        "name":"Eclipse Hooded Long Sleeve Surf T-Shirt" , 
+        "price": 55.95,
+        "picture":"views/pics/Eclipse.jpeg" ,
+        "category":"male" ,
+        "quantity":99
+    },
+    {
+        "name":"JBL Flip 4 Waterproof Portable Bluetooth Speaker - White" , 
+        "price": 89.95,
+        "picture":"views/pics/jbl.jpg" ,
+        "category":"more" ,
+        "quantity":99
+    },
+    {
+        "name":"Neso 1 Sunshade" , 
+        "price": 99.95,
+        "picture":"views/pics/Neso 1.avif" ,
+        "category":"more" ,
+        "quantity":99
+    },
+    {
+        "name":"Deluxe Beach Chair" , 
+        "price": 120.95,
+        "picture":"views/pics/Deluxe chair.webp" ,
+        "category":"more" ,
+        "quantity":99
+    },
+    {
+        "name":"Beach Bats" , 
+        "price": 30.95,
+        "picture":"views/pics/matkot 2.avif" ,
+        "category":"more" ,
+        "quantity":99
+    },
+
+
+
+
+
+
     ]
 
 
