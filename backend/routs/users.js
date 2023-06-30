@@ -1,7 +1,7 @@
 const User=require('../models/user');
 const express=require('express')
 const router=express.Router();
-const bcrypt=require('bcrypt')
+const bcrypt=require('bcryptjs');
 
 console.log("bye")
 
@@ -16,21 +16,11 @@ router.get('/',async(req,res)=>{
     res.send(user);
 }) 
 
-router.get('/id',async(req,res)=>{
-
-    const user=await User.find.findById(req.params.id);
-
-    if(!user){
-        res.status(500).json({message:'There is no such user with the given ID'});
-    }
-    res.send(user);
-}) 
-
 router.post('/',async(req,res)=>{
      let user = new User({
         name: req.body.name,
         email:req.body.email,
-        password:req.body.password,
+        password:bcrypt.hashSync(req.body.password,10),
         city:req.body.city,
         street:req.body.street,
         streetNum: req.body.streetNum,
@@ -49,7 +39,14 @@ router.post('/login',async(req,res)=>{
     if(!user)
     return res.status(400).send('The user not found')
 
-    return res.status(200).send(user);
+
+    if(user && bcrypt.compareSync(req.body.password , user.password)){
+        res.status(200).send('user Autenticated');
+    }
+    else{
+        res.status(400).send('password is wrong!');
+    }
+    
 })
 
 
