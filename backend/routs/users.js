@@ -8,13 +8,13 @@ console.log("bye")
 
 router.get('/',async(req,res)=>{
 
-    const user=await User.find()
+     const user=await User.find()
 
-    if(!user){
-        res.status(500).json({success:false})
-    }
-    res.send(user);
-}) 
+     if(!user){
+         res.status(500).json({success:false})
+     }
+     res.send(user);
+ }) 
 
 router.post('/',async(req,res)=>{
      let user = new User({
@@ -38,7 +38,6 @@ router.post('/login',async(req,res)=>{
     const user = await User.findOne({name:req.body.name})
     if(!user)
     return res.status(400).send('The user not found')
-
 
     if(user && bcrypt.compareSync(req.body.password , user.password)){
         res.status(200).send('user Autenticated');
