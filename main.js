@@ -18,19 +18,15 @@ app.set('views', path.join(__dirname, 'views'));
 console.log("main.js");
 //app.use(express.static(__dirname + '/views/public'));
 // Routes
-const productsRouts = require('./backend/routs/products');
-const usersRouts = require('./backend/routs/users');
-const ordersRouts = require('./backend/routs/orders');
-const orderItemsRouts=require('./backend/routs/orderitems');
+const otherRouts = require('./backend/routs/other');
 const womenRouts=require('./backend/routs/women');
 const menRouter = require('./backend/routs/men');
 
 
-app.use("/products", productsRouts);
-app.use("/users", usersRouts);
+
+
 //app.use("/register", usersRouts);
-app.use("/orders", ordersRouts);
-app.use("/orderitems", orderItemsRouts);
+app.use("/other", otherRouts);
 app.use("/shop/women", womenRouts);
 app.use('/men',menRouter);
 
