@@ -1,0 +1,56 @@
+body {
+    background-image: url('/pics/sea-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  
+  .nav .btn-group {
+    border-radius: 360px;
+    border: transparent 5px solid;
+  }
+  
+  .nav .btn-group input {
+    border: 5px ;
+    border-radius: 360px;
+  }
+  
+  .nav .btn-group a {
+    width: 80px;
+  }
+  
+  #mainImg img {
+    height: 580px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+  
+  .img-fluid {
+    height: 66%;
+  }
+  
+  .thumbnail img {
+    width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  .thumbnail {
+    padding: 10px;
+    position: relative;
+    width: 400px;
+  }
+  
+  .thumbnail .caption {
+    font-size: small;
+    position: static;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* #men-prod {
+    background-color: transparent;
+  } */
+  
