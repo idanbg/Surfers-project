@@ -2,51 +2,47 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const path=require('path'); 
-const Product = require('../data/products'); // Adjust path as needed
+const Product=require("../models/product");
+
+//MiddleWare
+router.use(bodyParser.urlencoded({ extended: false }));
+
+console.log("hey");
 
 router.get('/', async (req, res) => {
-  try {
-    const products = await Product.find({ gender: 'female' });
-    res.status(200).json(products);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false });
-  }
-});
+    console.log(Product);
+    try {
+        
+      const products = await Product.find({ gender:"female", quantity: { $gt: 0 } });
+      res.render('men', { products });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
-module.exports = router;
+  
+//   router.post('/', async (req, res) => {
+//     try {
+//       const sortBy = req.body.sorting; // Get the selected sorting option
+  
+//       let products;
+//       if (sortBy === 'product-name') {
+//         products = await Product.find({ category: 'boardshorts', quantity: { $gt: 0 } }).sort({ name: 1 });
+//       } else if (sortBy === 'product-price') {
+//         products = await Product.find({ category: 'boardshorts', quantity: { $gt: 0 } }).sort({ price: 1 });
+//       } else if (sortBy === 'product-brand') {
+//         products = await Product.find({ category: 'boardshorts', quantity: { $gt: 0 } }).sort({ brand: 1 });
+//       } else {
+//         // Handle invalid sorting option
+//         return res.status(400).send('Invalid sorting option');
+//       }
+  
+//       res.render('boardshorts', { products });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).send('Internal Server Error');
+//     }
+//   });
 
-
-
-// window.addEventListener('DOMContentLoaded', async () => {
-//   try {
-//     const response = await fetch('/shop/women');
-//     const products = await response.json();
-
-//     const container = document.getElementById("products-container"); // Adjust as needed
-
-    // products.forEach(product => {
-    //   const productCard = `
-    //     <div class="thumbnail text-center">
-    //       <img class="img-fluid" src="" alt="">
-    //       <div class="caption">
-    //         <p class="card-text font-monospace">${product.name}</p>
-    //         <p class="card-text font-monospace"><strong>${product.price}$</strong></p>
-    //       </div>
-    //       <div class="btn-group">
-    //         <button type="button" class="btn btn-sm btn-dark rounded-start-pill">Add To Cart</button>
-    //         <button type="button" class="btn btn-sm btn-white btn-outline-dark rounded-end-circle">
-    //           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
-    //             <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
-    //           </svg>
-    //         </button>
-    //       </div>
-    //     </div>
-    //   `;
-
-//       container.innerHTML += productCard;
-//     });
-//   } catch (error) {
-//     console.error(error);
-//   }
-//});
+module.exports=router;

@@ -22,12 +22,9 @@ const otherRouts = require('./backend/routs/other');
 const womenRouts=require('./backend/routs/women');
 const menRouter = require('./backend/routs/men');
 
-
-
-
 //app.use("/register", usersRouts);
 app.use("/other", otherRouts);
-app.use("/shop/women", womenRouts);
+app.use("/women", womenRouts);
 app.use('/men',menRouter);
 
 // MongoDB Connection
@@ -46,9 +43,9 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     res.sendFile(path.resolve('./views/homePage.html'));
   });
   
-  app.get("/shop/women", function (req, res) {
-    res.sendFile(path.resolve('./views/women.html'));
-  });
+  // app.get("/shop/women", function (req, res) {
+  //   res.sendFile(path.resolve('./views/women.html'));
+  // });
   
   
   // app.get("/shop/men", function (req, res) {
