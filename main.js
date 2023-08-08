@@ -15,15 +15,16 @@ app.use(morgan('tiny'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(__dirname + '/views/public'));
+console.log("main.js");
+//app.use(express.static(__dirname + '/views/public'));
 // Routes
 const productsRouts = require('./backend/routs/products');
 const usersRouts = require('./backend/routs/users');
 const ordersRouts = require('./backend/routs/orders');
 const orderItemsRouts=require('./backend/routs/orderitems');
 const womenRouts=require('./backend/routs/women');
+const menRouter = require('./backend/routs/men');
 
-console.log("hello");
 
 app.use("/products", productsRouts);
 app.use("/users", usersRouts);
@@ -31,6 +32,7 @@ app.use("/users", usersRouts);
 app.use("/orders", ordersRouts);
 app.use("/orderitems", orderItemsRouts);
 app.use("/shop/women", womenRouts);
+app.use('/men',menRouter);
 
 // MongoDB Connection
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -52,8 +54,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     res.sendFile(path.resolve('./views/women.html'));
   });
   
-  const menRouter = require('./backend/routs/men');
-  app.use('/men',menRouter);
+  
   // app.get("/shop/men", function (req, res) {
   //   res.sendFile(path.resolve('./views/men.html'));
   // });
