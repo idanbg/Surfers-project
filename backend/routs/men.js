@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const path=require('path'); 
-const Product=require("../data/products");
+const Product=require("../models/product");
 
 //MiddleWare
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -10,7 +10,9 @@ router.use(bodyParser.urlencoded({ extended: false }));
 console.log("hey");
 
 router.get('/', async (req, res) => {
+    console.log(Product);
     try {
+        
       const products = await Product.find({ gender:"male", quantity: { $gt: 0 } });
       res.render('men', { products });
     } catch (error) {
