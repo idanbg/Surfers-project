@@ -28,21 +28,7 @@
           </svg>
         </a></h3>
         <nav class="nav navbar  gap-3 text-light justify-content-center float-md-end">
-          <div class="btn-group">
-          <input class="form-control-sm shadow bg-body-tertiary  border-light" list="datalistOptions" type="search" placeholder="Search">
-          <datalist id="datalistOptions">
-            <option value="hat">
-            <option value="Swimsuit">
-            <option value="Tote">
-            <option value="Mikasa">
-            <option value="Boardshorts">
-          </datalist>
-          <a class="btn btn-sm shadow btn-img text-light fw-bold  " type="submit" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
-            <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
-            <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
-          </svg></a>
-        </div>
-        
+         
           <a class="nav-link text-light fw-bold  active" aria-current="page" href="men">Men</a>
           <a class="nav-link fw-bold text-light " href="women">Women</a>
           <a class="nav-link fw-bold text-light " href="more">More</a>
@@ -67,25 +53,32 @@
     <img class="d-block w-100" src="/pics/men-main (1).jpeg"  >
   </div>
 <!------------->
-<<<<<<< HEAD
 Prod Cards
   <div id="men-prod" class="album py-5 bg-body-tertiary  align-items-top">
     <div class="container position-relative">
-=======
-<!--Prod Cards-->
-  <div  class="album py-5 bg-body-tertiary  align-items-top">
-    <div  id="men-prod" class="container position-relative">
->>>>>>> b351c7ea709df5f6d75a23070c62706f93758177
       <!--First Row-->
+       <%products.forEach(product => {
+           const productCard = `
+             <div class="thumbnail text-center">
+               <img class="img-fluid" src="" alt="">
+               <div class="caption">
+                 <p class="card-text font-monospace">${product.name}</p>
+                 <p class="card-text font-monospace"><strong>${product.price}$</strong></p>
+               </div>
+               <div class="btn-group">
+                 <button type="button" class="btn btn-sm btn-dark rounded-start-pill">Add To Cart</button>
+                 <button type="button" class="btn btn-sm btn-white btn-outline-dark rounded-end-circle">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                     <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+                   </svg>
+                 </button>
+              </div>
+             </div>
+           %>
  
 </div>
 </div>
 <!--------------->
-
-
-  
-
-      
   </div>
 
 

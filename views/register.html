@@ -24,17 +24,38 @@
                   <a type="button" class="btn-close" href="/"></a>
                 </div>
       <!-- Register Form -->
-      <form >
+      <form action="/users" method="POST" id="register-form">
         <input type="text" id="name" class="fadeIn second" name="name" placeholder="User Name" >
         <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password" >
         <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email" >
         <input type="text" id="city" class="fadeIn fourth input-group" name="city" placeholder="City" >
-        <input type="text" id="Address" class="fadeIn fourth input-group" name="Address" placeholder="Address" >
-        <input type="text" id="add-num" class="fadeIn fourth input-group" name="House Number" placeholder="House Number" >
+        <input type="text" id="address" class="fadeIn fourth input-group" name="address" placeholder="Address" >
+        <input type="text" id="streetNum" class="fadeIn fourth input-group" name="streetNum" placeholder="Number" >
         <input type="submit" class="fadeIn fourth" value="Sign Up">
         <p><small class="text-body-secondary">By clicking Sign Up, you agree to the terms of use.</small></p> 
          <hr class="my-4">
        </form>
+       <script>
+  document.querySelector('#register-form').addEventListener('submit', async(event)=> {
+    event.preventDefault();
+
+    var formData = new FormData(this);
+
+    fetch('/users', {
+      method: 'POST',
+      body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message);
+
+      // Redirect to the homepage after 1 second
+      setTimeout(function() {
+        window.location.href = '/'; // Redirect to the homepage
+      }, 1000);
+    });
+  });
+</script>
        
       <!-- Register -->
       <div id="formFooter">

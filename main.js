@@ -9,12 +9,13 @@ const url = "mongodb+srv://Golshim123:Golshim123@webdevproject.k2obzer.mongodb.n
 app.use(express.static('views'));
 
 // Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
-app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, 'views'));
-app.set("frontend", path.join(__dirname, "frontend"));
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(__dirname + '/views/public'));
 // Routes
 const productsRouts = require('./backend/routs/products');
 const usersRouts = require('./backend/routs/users');
@@ -26,7 +27,7 @@ console.log("hello");
 
 app.use("/products", productsRouts);
 app.use("/users", usersRouts);
-app.use("/register", usersRouts);
+//app.use("/register", usersRouts);
 app.use("/orders", ordersRouts);
 app.use("/orderitems", orderItemsRouts);
 app.use("/shop/women", womenRouts);
@@ -43,52 +44,59 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
   app.get("/", function (req, res) {
-    res.sendFile(__dirname + '/views/homePage.html');
+    console.log(__dirname);
+    res.sendFile(path.resolve('./views/homePage.html'));
   });
   
   app.get("/shop/women", function (req, res) {
-    res.sendFile(__dirname + '/views/women.html');
+    res.sendFile(path.resolve('./views/women.html'));
   });
   
-  app.get("/shop/men", function (req, res) {
-    res.sendFile(__dirname + '/views/men.html');
-  });
+  const menRouter = require('./backend/routs/men');
+  app.use('/men',menRouter);
+  // app.get("/shop/men", function (req, res) {
+  //   res.sendFile(path.resolve('./views/men.html'));
+  // });
+
   
   app.get("/shop", function (req, res) {
-    res.sendFile(__dirname + '/views/shop.html');
+    res.sendFile(path.resolve('./views/shop.html'));
   });
+
+  //const LoginRouter = require('./Routers/routes/login');
   
   app.get("/logIn", function (req, res) {
-    res.sendFile(__dirname + '/views/logIn.html');
+    res.sendFile(path.resolve('./views/logIn.html'));
   });
+  //app.use('/login',)
   
-  app.get("/logIn", function (req, res) {
-    res.sendFile(__dirname + '/views/logIn.css');
-  });
-  
-  app.get("/register", function (req, res) {
-    res.sendFile(__dirname + '/views/register.html');
-  });
+  // app.get("/logIn", function (req, res) {
+  //   res.sendFile(__dirname + '/views/logIn.css');
+  // });
   
   app.get("/register", function (req, res) {
-    res.sendFile(__dirname + '/views/logIn.css');
+    res.sendFile(path.resolve('/views/register.html'));
   });
   
-  app.get("/style", function (req, res) {
-    res.sendFile(__dirname + '/views/style.css');
-  });
+  // app.get("/register", function (req, res) {
+  //   res.sendFile(__dirname + '/views/logIn.css');
+  // });
+  
+  // app.get("/style", function (req, res) {
+  //   res.sendFile(__dirname + '/views/style.css');
+  // });
   app.get("/shop/more", function (req, res) {
-    res.sendFile(__dirname + '/views/more.html');
+    res.sendFile(path.resolve('./views/more.html'));
   });
   app.get("/shop/shop1", function (req, res) {
-    res.sendFile(__dirname + '/views/shop1.html');
+    res.sendFile(path.resolve('./views/shop1.html'));
   });
-  app.get("/Logstyle", function (req, res) {
-    res.sendFile(__dirname + '/views/log.css');
-  });
-  app.get("/Regstyle", function (req, res) {
-    res.sendFile(__dirname + '/views/reg.css');
-  });
+  // app.get("/Logstyle", function (req, res) {
+  //   res.sendFile(__dirname + '/views/log.css');
+  // });
+  // app.get("/Regstyle", function (req, res) {
+  //   res.sendFile(__dirname + '/views/reg.css');
+  // });
 
 
 app.listen(3400,()=>{

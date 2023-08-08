@@ -8,21 +8,22 @@ console.log("bye")
 
 router.get('/',async(req,res)=>{
 
-     const user=await User.find()
+    const user=await User.find()
 
-     if(!user){
-         res.status(500).json({success:false})
-     }
-     res.send(user);
- }) 
+    if(!user){
+        res.status(500).json({success:false})
+    }
+    res.send(user);
+}) 
 
 router.post('/',async(req,res)=>{
-     let user = new User({
+    console.log("Password from request body:", req.body.password);
+    let user = new User({
         name: req.body.name,
         email:req.body.email,
         password:bcrypt.hashSync(req.body.password,10),
         city:req.body.city,
-        street:req.body.street,
+        street:req.body.address,
         streetNum: req.body.streetNum,
         permission:req.body.permission
     })
@@ -30,7 +31,7 @@ router.post('/',async(req,res)=>{
     if (!user)
     return res.status(404).send('error creating user ')
     
-    res.send(user);
+    res.json({message: "hey"});
 })
 
 
@@ -38,6 +39,7 @@ router.post('/login',async(req,res)=>{
     const user = await User.findOne({name:req.body.name})
     if(!user)
     return res.status(400).send('The user not found')
+
 
     if(user && bcrypt.compareSync(req.body.password , user.password)){
         res.status(200).send('user Autenticated');
