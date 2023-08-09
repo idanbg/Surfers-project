@@ -38,13 +38,17 @@ app.use("/women", womenRouts);
 const menRouter = require('./backend/routs/men');
 app.use('/men',menRouter);
 
+const loginRouter = require('./backend/routs/login');
+app.use('/login',loginRouter);
+
 
 // const homeRouter = require('./backend/routs/men');
 // app.use('/',homeRouter);
 
   app.get("/", function (req, res) {
     console.log(__dirname);
-    res.render(__dirname + '/views/homePage.ejs');
+    //res.render(__dirname + '/views/homePage.ejs');
+    res.render(__dirname + '/views/login');
   });
   
   // const LoginRouter = require('./Routers/routes/login');
