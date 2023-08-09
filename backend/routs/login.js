@@ -23,15 +23,12 @@ router.post('/', async (req, res) => {
     try {
         const user = await Users.findOne({  name:name });                        // Find the user by email
         if (!user) {                                                        // If the user does not exist
-          return res.status(400).render('login', { error: 'Invalid password' });         // Return an error
+          return res.status(400).render('login', { error: 'Invalid UserName' });         // Return an error
         }
-
-
-    // const isValidPassword = await user.validatePassword(password);              // Validate the password
-
-    // if (!isValidPassword) {                                                     // If the password is invalid
-    //  return res.status(400).render('login', { error: 'Invalid password' });    // Return an error
-    //}
+     const isValidPassword = await user.validatePassword(password);              // Validate the password
+     if (!isValidPassword) {                                                     // If the password is invalid
+      return res.status(400).render('login', { error: 'Invalid password' });    // Return an error
+      }
     if( user.permission===0){ 
         res.render('homePage');
     }

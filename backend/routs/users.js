@@ -3,7 +3,7 @@ const express=require('express')
 const router=express.Router();
 const bcrypt=require('bcryptjs');
 
-console.log("bye")
+console.log("users")
 
 
 router.get('/',async(req,res)=>{
