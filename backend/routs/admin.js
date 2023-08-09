@@ -1,3 +1,38 @@
+const express = require('express');
+const router = express.Router();
+const bodyParser = require('body-parser');
+const path=require('path');
+const Product=require('../models/product');
+
+
+
+// cards to be displayed on the admin page 
+router.get('/', async (req, res) => {                       
+    console.log("admin");
+    const nProducts = await Product.countDocuments();
+    const nOrders = 23;             //await Order.countDocuments(); 
+    const nSales = 12;              //await Order.countDocuments({ status: 'delivered' }); 
+    res.render('admin', {
+        nproducts: nProducts,
+        norders: nOrders,
+        nsales: nSales
+    });
+
+});
+
+
+
+
+/*app.get('/admin', (req, res) => {
+    Product.countDocuments()
+      .then(productCount => {
+        res.render('admin', { productCount });                          // This passes the product count to admin.ejs
+      })
+      .catch(err => res.status(400).send('Error: ' + err));
+  });
+
+
+
 // Get a reference to the sidebar element
 var sidebar = document.getElementById("sidebar");
 
@@ -51,3 +86,5 @@ var optionsArea = {
 
 var areaChart = new ApexCharts(document.querySelector("#area-chart"), optionsArea);
 areaChart.render();
+*/
+module.exports=router;

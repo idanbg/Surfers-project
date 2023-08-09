@@ -47,8 +47,15 @@ app.use('/men',menRouter);
 const loginRouter = require('./backend/routs/login');
 app.use('/login',loginRouter);
 
+const adminRouter = require('./backend/routs/admin');
+app.use('/admin',adminRouter);
+
 const registerRouter = require('./backend/routs/register');
 app.use('/register',registerRouter);
+
+const addproductRouter = require('./backend/routs/register');
+app.use('/addproduct',addproductRouter);
+
 
 // const homeRouter = require('./backend/routs/men');
 // app.use('/',homeRouter);

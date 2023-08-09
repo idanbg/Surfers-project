@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="log.css">
+    <title>Add Product</title>
+</head>
+<body class="bg-img" style="background-image:url('/pics/golshim.jpeg');">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="fadeIn first mt-4">
+                <h1 class="fw-bold mb-0 fs-2">Add Product</h1>
+            </div>
+            <form action="/addproduct" method="post">
+                <input type="text" id="name" class="fadeIn second" name="name" placeholder="Product Name">
+                <input type="number" id="price" class="fadeIn third" name="price" placeholder="Price">
+                <input type="text" id="picture" class="fadeIn third" name="picture" placeholder="Picture URL">
+                <input type="text" id="category" class="fadeIn third" name="category" placeholder="Category">
+                <input type="number" id="quantity" class="fadeIn third" name="quantity" placeholder="Quantity">
+                <input type="text" id="gender" class="fadeIn third" name="gender" placeholder="Gender (Optional)">
+                <input type="submit" class="fadeIn fourth" value="Add Product">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
