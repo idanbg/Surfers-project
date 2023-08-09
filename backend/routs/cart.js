@@ -10,7 +10,7 @@ router.use(cookieParser());
 
 router.get('/', async (req, res) => {
   const cartItems = req.cookies.ProductCart || [];
-
+  console.log(cartItems);
   try {
     const productNames = cartItems.map(item => item.name);
     const products = await Product.find({ name: { $in: productNames } });
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const buttonText = req.body.action;
-
+      
   if (buttonText === 'delete') {
     const { itemName } = req.body;
     const cartItems = req.cookies.ProductCart || [];
@@ -105,5 +105,5 @@ router.post('/', async (req, res) => {
     }
   }
 });
-
+    
 module.exports = router;

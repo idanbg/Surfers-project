@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
 
  router.post('/Addto', (req, res) => {
   const action = req.body.action;
-  console.log("addto");
+  console.log(action);
 
   if (action) {
     const [actionType, productName] = action.split(':');

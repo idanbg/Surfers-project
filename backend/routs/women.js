@@ -7,7 +7,7 @@ const Product=require("../models/product");
 //MiddleWare
 router.use(bodyParser.urlencoded({ extended: false }));
 
-console.log("hey");
+console.log("women");
 
 router.get('/', async (req, res) => {
     console.log(Product);
