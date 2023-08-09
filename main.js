@@ -30,6 +30,8 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 const otherRouts = require('./backend/routs/other');
 app.use("/other", otherRouts);
 
+const cartRouts = require('./backend/routs/cart');
+app.use("/cart", cartRouts);
 
 const womenRouts=require('./backend/routs/women');
 app.use("/women", womenRouts);
