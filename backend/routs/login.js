@@ -8,7 +8,6 @@ const Users=require("../models/user");
 //MiddleWare
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
-console.log("login");
 
 router.get('/', async (req, res) => {
     const username=req.cookies.username;
@@ -25,24 +24,23 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    console.log("login 123 ");
     const {name,password}=req.body;                                        // get the email and password from the request body
     console.log(name);                                                     // print the email and password
     console.log(password);                                                  // print the email and password
     try {
         const user = await Users.findOne({  name:name });                        // Find the user by email
         if (!user) {                                                        // If the user does not exist
-          return res.status(400).render('login', { error: 'Invalid UserName' });         // Return an error
+          return res.render('login', { error: 'Invalid UserName' });         // Return an error
         }
-     const isValidPassword = await user.validatePassword(password);              // Validate the password
-     if (!isValidPassword) {                                                     // If the password is invalid
-      return res.status(400).render('login', { error: 'Invalid password' });    // Return an error
+                      // Validate the password
+     if (user.password!=password) {                                                     // If the password is invalid
+      return res.render('login', { error: 'Invalid Password' });    // Return an error
       }
     if( user.permission===0){ 
-        res.render('homePage');
+        res.redirect('/homePage');
     }
     else{
-        res.render('admin');
+        res.redirect('/admin');
     }
     //res.redirect('/');                                                          // Redirect to the home page or dashboard
 } catch (error) {                                                               // If an error occurred
