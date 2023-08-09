@@ -1,56 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Surfshop</title>
-    <link href="https://fonts.cdnfonts.com/css/retro-new " rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.-version"">
-    <link rel="stylesheet" href="./women.css">
-                
-  </head>
 
-  <body data-bs-theme="light">
-  
-  
-   
-<!--Main Code for Men-->
-
-<main>
-  <div class="bg-img cover-container d-flex w-100 h-100 p-3 mx-auto flex-column"style="background-image:url('/pics/golshim.jpeg');" >
-    <header class="mb-auto">
-      <div>
-        <h3 class="float-md-start mt-2"> <a href="/" class=" align-items-center">
-          <svg class="bi me-2 text-light float start" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-tsunami" viewBox="0 0 16 16">
-            <path d="M.036 12.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zm0 2a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zM2.662 8.08c-.456 1.063-.994 2.098-1.842 2.804a.5.5 0 0 1-.64-.768c.652-.544 1.114-1.384 1.564-2.43.14-.328.281-.68.427-1.044.302-.754.624-1.559 1.01-2.308C3.763 3.2 4.528 2.105 5.7 1.299 6.877.49 8.418 0 10.5 0c1.463 0 2.511.4 3.179 1.058.67.66.893 1.518.819 2.302-.074.771-.441 1.516-1.02 1.965a1.878 1.878 0 0 1-1.904.27c-.65.642-.907 1.679-.71 2.614C11.076 9.215 11.784 10 13 10h2.5a.5.5 0 0 1 0 1H13c-1.784 0-2.826-1.215-3.114-2.585-.232-1.1.005-2.373.758-3.284L10.5 5.06l-.777.388a.5.5 0 0 1-.447 0l-1-.5a.5.5 0 0 1 .447-.894l.777.388.776-.388a.5.5 0 0 1 .447 0l1 .5a.493.493 0 0 1 .034.018c.44.264.81.195 1.108-.036.328-.255.586-.729.637-1.27.05-.529-.1-1.076-.525-1.495-.426-.42-1.19-.77-2.477-.77-1.918 0-3.252.448-4.232 1.123C5.283 2.8 4.61 3.738 4.07 4.79c-.365.71-.655 1.433-.945 2.16-.15.376-.301.753-.463 1.13z"></path>
-          </svg>
-        </a></h3>
-        <nav class="nav navbar  gap-3 text-light justify-content-center float-md-end">
-         
-          <a class="nav-link text-light fw-bold  active" aria-current="page" href="/men">Men</a>
-          <a class="nav-link fw-bold text-light " href="/women">Women</a>
-          <a class="nav-link fw-bold text-light " href="/other">Other</a>
-          <a class="nav-link fw-bold text-light " href="/search">Search</a>
-          <a class="nav-link fw-bold text-light " href="/cart">Cart</a>
-          <!-- <a class="nav-link fw-bold text-light " href="/logIn">Log In</a> -->
+<%- include('header')%>
 
 
-        </nav>
-      </div>
-      
-    </header>
-
-   <!--BreadCrumb-->
-  
    
   <!--------------->
 <!--MAIN PIC-->
-  <div id="mainImg" class="carousel carousel-slide">
-    <img class="d-block w-100" src="/pics/men-main (1).jpeg"  >
-  </div>
+<div id="mainImg" class="carousel carousel-slide">
+  <img class="d-block w-100" src="/pics/Category-Carousel 3.jpeg"  >
+</div>
+  <form action="/other" method="post">
+    <div class="sorting-container">
+      <label for="sorting">Sort By:</label>
+      <select id="sorting" name="sorting">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Click to sort</button> <!-- Add class and type attribute -->
+  </form>
 <!------Prod Cards------->
+<form action="/other/Addto" method="post">
 <div id="men-prod" class="album py-5 bg-body-tertiary align-items-center" >
   <div class="container position-relative">
     <!--First Row-->
@@ -68,8 +37,8 @@
               <p class="card-text font-monospace"><strong><%= product.price %></strong></p>
             </div>
             <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-dark rounded-start-pill" value="cart:<%= product['product.name'] %>">Add To Cart</button>
-              <button type="button" class="btn btn-sm btn-white btn-outline-dark rounded-end-circle">
+              <button name="action" type="submit" class="btn btn-sm btn-dark rounded-start-pill" value="cart:<%= product.name %>">Add To Cart</button>
+              <button name="action" type="submit" class="btn btn-sm btn-white btn-outline-dark rounded-end-circle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
                   <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
                 </svg>
@@ -81,54 +50,12 @@
     </div>
   </div>
 </div>
-
+</form>
 
   </div>
-  <hr>
-   <!--Footer-->
-<div class="container-fluid bg-light">
-  <footer class="bg-light align-items-center py-3 my-4 border-top text-center">
-    <div class="row justify-content-center mt-4">
-      <div class="col-6 text-left">
-        <h1 class="fw-bold text-dark">Contact Us</h1>
-        <p class="font-monospace text-dark">
-          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-               </svg> Trumpeldor Beach, Near The Statue</p>
-        </p>
-        <p class="font-monospace text-dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-        </svg> +972544443322</p>
-        <p class="font-monospace text-dark">
-          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-               </svg> Open: 9:00-21:00 SUN-SAT</p>
-               <br>
-        </p>
-        <br>
-        <p>
-          <ul class="nav col-12 list-unstyled d-flex justify-content-center">
-            <li class="ms-3"><a class="text-dark" href="#">
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-            </svg></a>
-              </a></li>
-            <li class="ms-3"><a class="text-dark" href="#">
-              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-            </svg><use xlink:href="#facebook"></use></svg>
-              </a></li>
-          </ul>
-        </p>
-      </div>
-      <div class="col-6">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.7491518148117!2d34.76222142700077!3d32.07603281947673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4c7d7f3f8ec3%3A0x3b6678bc5ab3013c!2sTrumpeldor%20Beach!5e0!3m2!1sen!2sil!4v1687777506430!5m2!1sen!2sil" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </footer>
-</div>
+  
+  <%- include('footer')%>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
-</html>
 
 
 

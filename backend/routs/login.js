@@ -2,15 +2,24 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const path=require('path'); 
+const cookieParser = require('cookie-parser');
 const Users=require("../models/user");
 
 //MiddleWare
 router.use(bodyParser.urlencoded({ extended: false }));
-
+router.use(cookieParser());
 console.log("login");
 
 router.get('/', async (req, res) => {
-    res.render('login');
+    const username=req.cookies.username;
+    if(username)
+    {
+      console.log(username);
+      res.render('login',{naming:username});
+    }
+    else
+    res.render('login',{naming:'Guest'});
+
   }
 );
 
