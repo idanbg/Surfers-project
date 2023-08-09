@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const path=require('path'); 
-const Product=require("../models/product"); 
+const path = require('path'); 
+const cookieParser = require('cookie-parser');
+const Product = require("../models/product"); 
 
-//MiddleWare
+// MiddleWare
 router.use(bodyParser.urlencoded({ extended: false }));
+router.use(cookieParser());
 
 router.get('/', async (req, res) => {
   try {
