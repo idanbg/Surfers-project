@@ -14,18 +14,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    city:{
-         type:String,
-         required:true
-    },
-    street:{
-        type:String,
-        required:true
-    },
-    streetNum:{
-         type:Number,
-         required:true
-    },
     permission: {
         type: Number,
         default:0  // "0" for user, "1" admin

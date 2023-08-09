@@ -27,6 +27,10 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
   //routes
+  const homeRouts = require('./backend/routs/homePage');
+  app.use("/", homeRouts);
+
+
 const otherRouts = require('./backend/routs/other');
 app.use("/other", otherRouts);
 
@@ -41,6 +45,8 @@ app.use('/men',menRouter);
 const loginRouter = require('./backend/routs/login');
 app.use('/login',loginRouter);
 
+const registerRouter = require('./backend/routs/register');
+app.use('/register',registerRouter);
 
 // const homeRouter = require('./backend/routs/men');
 // app.use('/',homeRouter);
@@ -55,17 +61,17 @@ app.use('/login',loginRouter);
   // app.use('/login',)
 
   app.get("/login", function (req, res) {
-    res.render(__dirname + '/views/login.ejs');
+    res.render('login');
   });
   app.get("/login", function (req, res) {
-    res.render(__dirname + '/views/log.css');
+    res.render('log');
   });
-  app.get("/register", function (req, res) {
-    res.render(__dirname + '/views/register.ejs');
-  });
-  app.get("/register", function (req, res) {
-    res.render(__dirname + '/views/log.css');
-  });
+  // app.get("/register", function (req, res) {
+  //   res.render('register');
+  // });
+  // app.get("/register", function (req, res) {
+  //   res.render('log');
+  // });
   
   // app.get("/style", function (req, res) {
   //   res.sendFile(__dirname + '/views/style.css');

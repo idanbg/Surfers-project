@@ -21,9 +21,9 @@ router.post('/', async (req, res) => {
     console.log(name);                                                     // print the email and password
     console.log(password);                                                  // print the email and password
     try {
-        const user = await Users.findOne({  email:name });                        // Find the user by email
+        const user = await Users.findOne({  name:name });                        // Find the user by email
         if (!user) {                                                        // If the user does not exist
-          return res.status(400).send('Invalid email or password');         // Return an error
+          return res.status(400).send('Invalid name or password');         // Return an error
         }
 
 
@@ -33,10 +33,10 @@ router.post('/', async (req, res) => {
     //  return res.status(400).render('login', { error: 'Invalid password' });    // Return an error
     //}
     if( user.permission===0){ 
-        res.render('homePage.ejs');
+        res.render('homePage');
     }
     else{
-        res.render('admin.html');
+        res.render('admin');
     }
     //res.redirect('/');                                                          // Redirect to the home page or dashboard
 } catch (error) {                                                               // If an error occurred
