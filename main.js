@@ -42,6 +42,9 @@ app.use("/women", womenRouts);
 const menRouter = require('./backend/routs/men');
 app.use('/men',menRouter);
 
+const show1Router = require('./backend/routs/show1product');
+app.use('/show1product',show1Router);
+
 const searchRouter = require('./backend/routs/search');
 app.use('/search',searchRouter);
 

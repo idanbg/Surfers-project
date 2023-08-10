@@ -1,17 +1,12 @@
 <%- include('header')%>
 
 
-<!-- טופס חיפוש -->
-
-<div class="container-xxl" id="search">
+ <!-- טופס חיפוש -->
+ <div class="container-xxl" id="search">
     <h1>Search Products</h1>
     <input class="form-control me-2" id="search-input" type="text" placeholder="Search">
     <div id="autocomplete-dropdown" class="dropdown-content"></div>
   </div>
-
-
-
-
 
 
 
@@ -32,8 +27,8 @@
               response.forEach(function(item) {
                 var dropdownItem = $("<a>", {
                   class: "dropdown-item",
-                  href: "/show1product/" + encodeURIComponent(item["name of product"]),
-                  text: item["name of product"]
+                  href: "/show1product/" + encodeURIComponent(item["name"]),
+                  text: item["name"]
                 });
 
                 autocompleteDropdown.append(dropdownItem);

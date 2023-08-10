@@ -5,22 +5,24 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const Product = require("../models/product"); 
 
-router.get('/', (req, res) => {
-    const query = req.query.query; // Get the search query from the URL query parameters
-  
-    if (query) {
-      // Filter the items based on the search query
-      const searchResults = allItems.filter(item =>
-        item.title.toLowerCase().includes(query.toLowerCase())
-      );
-      res.render('search', { searchResults });
-    } else {
-      // If no query provided, render the search page without results
-      res.render('search', { searchResults: null });
-    }
+// GET route for searching products
+router.get('/', async (req, res) => {
+    res.render('search'); // Assuming you have a search.ejs view file
   });
-
-
-
+  
+  // POST route for searching products
+  // POST route for searching products
+  router.post('/search', async (req, res) => {
+      try {
+        const searchValue = req.body.searchValue;
+        const products = await Product.find({ name: { $regex: searchValue, $options: 'i' } }).limit(10);
+        res.json(products);
+      } catch (error) {
+        console.error("Failed to search products:", error);
+        res.status(500).json({ error: "Failed to search products" });
+      }
+    });
+    
+  
 
   module.exports = router;
