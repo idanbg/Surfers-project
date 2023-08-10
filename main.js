@@ -51,6 +51,10 @@ app.use('/search',searchRouter);
 const loginRouter = require('./backend/routs/login');
 app.use('/login',loginRouter);
 
+const wishRouter = require('./backend/routs/wishlist');
+app.use('/wishlist',wishRouter);
+
+
 const adminRouter = require('./backend/routs/admin');
 app.use('/admin',adminRouter);
 
