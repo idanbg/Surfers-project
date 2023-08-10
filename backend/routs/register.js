@@ -20,7 +20,8 @@ router.use(express.json());
 router.post('/', async (req, res) => {
     console.log('');
     const checking = await User.find({});
-    const redirectURL = req.query.redirectURL || req.headers.referer || '/';    const data = {
+    const redirectURL = req.body.redirectURL || '/';
+    const data = {
       name: req.body.name,
       password: req.body.password,
       email: req.body.email,
