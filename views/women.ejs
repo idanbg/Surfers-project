@@ -1,26 +1,26 @@
-
 <%- include('header')%>
 
 
    
   <!--------------->
 <!--MAIN PIC-->
-<div id="mainImg" class="carousel carousel-slide">
-  <img class="d-block w-100" src="/pics/Women-main.jpeg"  >
-</div>
-<form action="/women" method="post">
-  <div class="sorting-container">
-    <label class="sorting-label" for="sorting">Sort By:</label>
-    <select id="sorting" name="sorting">
-      <option value="name">Name</option>
-      <option value="price">Price</option>
-    </select>
-    <button type="submit" class="sort-button">Sort</button>
+  <div id="mainImg" class="carousel carousel-slide">
+    <img class="d-block w-100" src="/pics/Women-main.jpeg
+    ">
   </div>
-</form>
+  <div  style="background-image: url('pics/Sand-Background 2.avif');">
+    <form action="/women" method="post">
+    <div class="sorting-container">
+      <label class="sorting-label" for="sorting">Sort By:</label>
+      <select id="sorting" name="sorting">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+      <button type="submit" class="sort-button">Sort</button>
+    </div>
+  </form>
 <!------Prod Cards------->
 <form action="/women/Addto" method="post">
-<div id="men-prod" class="album py-5 bg-body-tertiary align-items-center" >
   <div class="container position-relative">
     <!--First Row-->
     <div class="row justify-content-center"> <!-- Add justify-content-center class here -->
@@ -39,15 +39,20 @@
             <div class="btn-group">
               <button name="action" type="submit" class="btn btn-sm btn-dark rounded-pill" value="cart:<%= product.name %>">Add To Cart</button>
               <button name="action" type="submit" class="btn btn-sm btn-dark rounded-pill" value="wishlist:<%= product.name %>">Add To Wish list</button>
+
             </div>
           </div>
         </div>
       <% }); %>
     </div>
   </div>
-</div>
 </form>
+</div>
 
-  </div>
+  
   
   <%- include('footer')%>
+
+
+
+  
