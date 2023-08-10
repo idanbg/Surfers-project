@@ -49,8 +49,24 @@ body {
     margin-top: 10px;
     margin-bottom: 15px;
   }
+
+  .navbar {
+    background-color: black;
+  }
+  
+  .nav-link {
+    color: white;
+  }
+  
+   /* #men-prod {
+    background-color: rgba(255, 255, 255, 0.5);
+  } */
   
   /* #men-prod {
-    background-color: transparent;
-  } */
+    background-image: url('/views/pics/golshim2%202.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
   
