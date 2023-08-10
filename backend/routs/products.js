@@ -4,7 +4,7 @@ const router=express.Router();
 
 
 router.get('/',async(req,res)=>{
-    console.log("heyyyyy");
+    console.log("products");
     const product=await Product.find();
 
     if(!product){

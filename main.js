@@ -70,12 +70,12 @@ app.use('/addproduct',addproductRouter);
   // const LoginRouter = require('./Routers/routes/login');
   // app.use('/login',)
 
-  app.get("/login", function (req, res) {
-    res.render('login');
-  });
-  app.get("/login", function (req, res) {
-    res.render('log');
-  });
+  // app.get("/login", function (req, res) {
+  //   res.render('login');
+  // });
+  // app.get("/login", function (req, res) {
+  //   res.render('log');
+  // });
   // app.get("/register", function (req, res) {
   //   res.render('register');
   // });

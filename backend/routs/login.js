@@ -10,22 +10,35 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 
 router.get('/', async (req, res) => {
-    const username=req.cookies.username;
-    if(username)
-    {
-      console.log(username);
-      res.render('login',{naming:username});
-    }
-    else
-    res.render('login',{naming:'Guest'});
+  const username = req.cookies.username;
+  const redirectURL = req.headers.referer || '/'; // Capture the referring URL
 
+  if (username) {
+    console.log(username);
+    res.render('login', { naming: username, redirectURL: redirectURL });
+  } else {
+    res.render('login', { naming: 'Guest', redirectURL: redirectURL });
   }
-);
+});
+
+
+// router.get('/', async (req, res) => {
+//     const username=req.cookies.username;
+//     if(username)
+//     {
+//       console.log(username);
+//       res.render('login',{naming:username});
+//     }
+//     else
+//     res.render('login',{naming:'Guest'});
+
+//   }
+// );
 
 
 router.post('/', async (req, res) => {
     const {name,password}=req.body;                                        // get the email and password from the request body
-    console.log(name);                                                     // print the email and password
+    const redirectURL = req.body.redirectURL || '/';                          // print the email and password
     console.log(password);                                                  // print the email and password
     try {
         const user = await Users.findOne({  name:name });                        // Find the user by email
@@ -34,10 +47,11 @@ router.post('/', async (req, res) => {
         }
                       // Validate the password
      if (user.password!=password) {                                                     // If the password is invalid
-      return res.render('login', { error: 'Invalid Password' });    // Return an error
+      return res.render('login', { error: 'Wrong Password' });    // Return an error
       }
     if( user.permission===0){ 
-        res.redirect('/homePage');
+      console.log("succsses");  
+        res.redirect(redirectURL);
     }
     else{
         res.redirect('/admin');

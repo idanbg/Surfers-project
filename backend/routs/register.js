@@ -10,16 +10,17 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(express.json());
 
 
-router.get('/', async (req, res) => {
+  router.get('/', async (req, res) => {
     console.log("register");
-    res.render('register');
-  }
-);
+    const redirectURL = req.query.redirectURL || req.headers.referer || '/';//save the last page that we've been to
+  res.render('register', { redirectURL: redirectURL });
+  });
+
 
 router.post('/', async (req, res) => {
     console.log('');
     const checking = await User.find({});
-    const data = {
+    const redirectURL = req.query.redirectURL || req.headers.referer || '/';    const data = {
       name: req.body.name,
       password: req.body.password,
       email: req.body.email,
@@ -44,7 +45,7 @@ router.post('/', async (req, res) => {
         console.log(data);
         await User.insertMany([data]);
         //res.status(201).render("home", { naming: req.body.name , permission:0});
-        res.status(201).render("homePage");
+        res.status(201).redirect(redirectURL);
       
     }
     } else {
