@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
       return res.status(400).send('Invalid sorting option');
     }
 
-    res.render('men', { products }); // Corrected template name
+    res.render('other', { products }); // Corrected template name
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
