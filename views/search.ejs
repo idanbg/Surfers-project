@@ -1,0 +1,53 @@
+<%- include('header')%>
+
+
+<!-- טופס חיפוש -->
+
+<div class="container-xxl" id="search">
+    <h1>Search Products</h1>
+    <input class="form-control me-2" id="search-input" type="text" placeholder="Search">
+    <div id="autocomplete-dropdown" class="dropdown-content"></div>
+  </div>
+
+
+
+
+
+
+
+<%- include('footer')%>
+<script>
+    $(document).ready(function() {
+      $("#search-input").on("input", function() {
+        var searchValue = $(this).val().toLowerCase();
+        var autocompleteDropdown = $("#autocomplete-dropdown");
+        autocompleteDropdown.empty();
+
+        if (searchValue.length > 0) {
+          $.ajax({
+            url: "/search/search",
+            method: "POST",
+            data: { searchValue: searchValue },
+            success: function(response) {
+              response.forEach(function(item) {
+                var dropdownItem = $("<a>", {
+                  class: "dropdown-item",
+                  href: "/show1product/" + encodeURIComponent(item["name of product"]),
+                  text: item["name of product"]
+                });
+
+                autocompleteDropdown.append(dropdownItem);
+              });
+
+              autocompleteDropdown.show();
+            },
+            error: function(error) {
+              console.error("Failed to fetch autocomplete data:", error);
+            }
+          });
+        } else {
+          autocompleteDropdown.hide();
+        }
+      });
+    });
+  </script>
