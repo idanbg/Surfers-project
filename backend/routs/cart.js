@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const Product = require("../models/product");
 
 
+
 // Add bodyParser and cookieParser middleware
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());

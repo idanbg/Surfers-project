@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     console.log('');
     const checking = await User.find({});
-    const data = {
+    const model = {
       name: req.body.name,
       password: req.body.password,
       email: req.body.email,
@@ -39,12 +39,12 @@ router.post('/', async (req, res) => {
         }
       }
       if (userExists) {
-        res.send("User details already exist");
+        res.send("UserName is alrdy exist");
       } else {
-        console.log(data);
-        await User.insertMany([data]);
+        console.log(model);
+        await User.insertMany([model]);
         //res.status(201).render("home", { naming: req.body.name , permission:0});
-        res.status(201).render("homePage");
+        res.status(201).render("homePage",{status: req.body.name,permission:0});
       
     }
     } else {
