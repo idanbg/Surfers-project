@@ -42,10 +42,8 @@ router.post('/', async (req, res) => {
 
      
 
-
- router.post('/Addto', (req, res) => {
+router.post('/Addto', (req, res) => {
   const action = req.body.action;
-  console.log(action);
 
   if (action) {
     const [actionType, productName] = action.split(':');
@@ -71,9 +69,29 @@ router.post('/', async (req, res) => {
       // Log the value of the "ProductCart" cookie
       console.log('ProductCart:', existingCart);
 
-      res.redirect('/other'); // Redirect back to the men page
+      res.redirect('/other');
     } else if (actionType === 'wishlist') {
-      // ... (similar code for wishlist functionality)
+      // Add the product name to the "ProductWishList" cookie
+      const existingWishlist = req.cookies.ProductWishList || [];
+
+      // Check if the product already exists in the wishlist
+      const existingProductIndex = existingWishlist.findIndex(item => item.name === productName);
+
+      if (existingProductIndex !== -1) {
+        // If the product already exists, update its quantity
+        existingWishlist[existingProductIndex].quantity += 1;
+      } else {
+        // If the product doesn't exist, add it with quantity 1
+        existingWishlist.push({ name: productName, quantity: 1 });
+      }
+
+      // Set the updated wishlist items to the "ProductWishList" cookie
+      res.cookie('ProductWishList', existingWishlist, { maxAge: 86400000 }); // Cookie expires in 24 hours
+
+      // Log the value of the "ProductWishList" cookie
+      console.log('ProductWishList:', existingWishlist);
+
+      res.redirect('/other');
     } else {
       res.send('Invalid request');
     }

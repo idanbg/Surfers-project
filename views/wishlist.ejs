@@ -1,0 +1,70 @@
+<%- include('header')%>
+
+<!--MAIN PIC-->
+<div id="mainImg" class="carousel carousel-slide">
+    <img class="d-block w-100" src="pics/pexels-bradley-hook-111085.jpg"  >
+  </div>
+
+<div class="wish-page">
+
+<!-- סל קניות -->
+<h1 class="headline">My Wish List</h1>
+
+<% if (cartItems.length === 0) { %>
+  <h4 id="empty">The wish list is empty</h4>
+<% } else { %>
+  
+  <form action="/wishList" method="post">        
+    <div class="table-responsive-lg">
+  <table class="table">
+
+    <thead>
+    <tr>
+      <th class="column-width">Product name</th>
+      <th class="column-width">Price</th>
+      <th class="column-width">Category</th>
+      <th class="column-width">img</th>
+      <th class="column-width">Actions</th>
+      <th class="column-width">Add</th>
+
+    </tr>
+</thead>
+<tbody>
+  <% cartItems.forEach(function(item, index) { %>             
+           <tr>
+          <% const product = products[index]; %>
+  <% if (product) { %>
+          <td class="column-width"><%= product.name %></td>
+          <td class="column-width"><%= product.price %></td>
+          <td class="column-width"><%= product.category %></td>
+         
+          <td class="column-width"><img class="card-img-top" style="width:50px" height="50px" src="<%= product.picture %>" alt="<%= product.name %> Image" /></td>
+          <div>
+            <form action="/wishList/delete" method="post">
+            <td>
+              <input type="hidden" name="itemName" value="<%=product.name %>">
+              <button type="submit" class="delete-button" name="action" value="delete">Delete</button>
+            </td>
+            </form>
+          </div>
+          <div>
+            <form action="/wishList/Addto" method="post">
+            <td>
+              <input type="hidden" name="itemName" value="<%= product.name %>">
+              <button type="submit" class="delete-button" name="action" value="cart:<%= product.name %>">Add to Cart</button>
+            </td>
+            </form>
+          </div>
+        </tr>
+        <% } %>
+        <% }); %>
+      </tbody>
+    </table>
+    <button class="delete-button" name="action" value="Clear">Clear Wish-List</button>
+    </div>
+  </form>
+  <% } %>
+
+</div>
+  
+  <%- include('footer')%>
