@@ -86,6 +86,40 @@
   .nav-link {
     color: white;
   }
+
+  .delete-button,
+  .sort-button {
+    background-color:  #244345;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .delete-button:hover,
+  .sort-button:hover {
+    background-color: #3b676a;
+  }
+
+  /* Add opacity to the table */
+  table {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken the background */
+    border-collapse: separate;
+    border-spacing: 0 5px; /* Add spacing between rows */
+  }
+
+  tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+
+  .dark-row {
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the color and opacity as needed */
+    color: white; /* Set text color to white for better visibility */
+  }
+
   
 
 

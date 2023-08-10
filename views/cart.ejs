@@ -24,11 +24,12 @@
                     </tr>
                 </thead>
                 <tbody>
+                  
                     <% let totalPrice = 0; %>
                     <% cartItems.forEach(function(item) { %>
                         <% const product = products.find(prod => prod.name === item.name); %>
                         <% if (product) { %>
-                            <tr>
+                            <tr class="dark-row">
                                 <td><%= product.name %></td>
                                 <td><%= product.price %></td>
                                 <td><%= product.category %></td>
@@ -59,7 +60,7 @@
                     <% }); %>
                 </tbody>
             </table>
-            <p>The total price is: <%= totalPrice %> $</p>
+            <p>The total price is: <%= totalPrice.toFixed(2) %> $</p>
             <button type="submit" name="action" value="buy" class="delete-button">Buy</button>
         </div>
       </form>
