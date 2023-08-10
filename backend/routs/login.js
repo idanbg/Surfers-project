@@ -11,13 +11,12 @@ router.use(cookieParser());
 
 router.get('/', async (req, res) => {
   const username = req.cookies.username;
-  const redirectURL = req.headers.referer || '/'; // Capture the referring URL
 
   if (username) {
     console.log(username);
-    res.render('login', { naming: username, redirectURL: redirectURL });
+    res.render('login', { status: username });
   } else {
-    res.render('login', { naming: 'Guest', redirectURL: redirectURL });
+    res.render('login', { status: 'Guest' });
   }
 });
 
@@ -37,11 +36,12 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    const {name,password}=req.body;                                        // get the email and password from the request body
-    const redirectURL = req.body.redirectURL || '/';                          // print the email and password
-    console.log(password);                                                  // print the email and password
+    const name=req.body.name.trim();
+    const password=req.body.password;                                        // get the email and password from the request body
     try {
-        const user = await Users.findOne({  name:name });                        // Find the user by email
+        const user = await Users.findOne({  name:name }); 
+                              // Find the user by email
+                               // Find the user by email
         if (!user) {                                                        // If the user does not exist
           return res.render('login', { error: 'Invalid UserName' });         // Return an error
         }
@@ -49,13 +49,14 @@ router.post('/', async (req, res) => {
      if (user.password!=password) {                                                     // If the password is invalid
       return res.render('login', { error: 'Wrong Password' });    // Return an error
       }
-    if( user.permission===0){ 
-      console.log("succsses");  
-        res.redirect(redirectURL);
-    }
-    else{
-        res.redirect('/admin');
-    }
+      res.cookie('username',name);
+      res.cookie('permission',user.permission);
+      res.render('homePage', { 
+        status: user.name || 'Guest',
+        permission: user.permission || 0 
+    });
+    
+    
     //res.redirect('/');                                                          // Redirect to the home page or dashboard
 } catch (error) {                                                               // If an error occurred
   console.error(error);                                                         // Log the error
