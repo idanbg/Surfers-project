@@ -5,7 +5,14 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const Product = require("../models/product"); 
 
-// GET route for searching products
+const publicPath = path.join(__dirname, '../public');
+
+// Add bodyParser and cookieParser middleware
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(cookieParser());
+router.use(express.static(publicPath));
+
+
 router.get('/', async (req, res) => {
     res.render('search'); // Assuming you have a search.ejs view file
   });

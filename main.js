@@ -64,39 +64,6 @@ app.use('/register',registerRouter);
 const addproductRouter = require('./backend/routs/register');
 app.use('/addproduct',addproductRouter);
 
-
-// const homeRouter = require('./backend/routs/men');
-// app.use('/',homeRouter);
-
-  app.get("/", function (req, res) {
-    console.log(__dirname);
-    //res.render(__dirname + '/views/homePage.ejs');
-    res.render(__dirname + '/views/login');
-  });
-  
-  // const LoginRouter = require('./Routers/routes/login');
-  // app.use('/login',)
-
-  // app.get("/login", function (req, res) {
-  //   res.render('login');
-  // });
-  // app.get("/login", function (req, res) {
-  //   res.render('log');
-  // });
-  // app.get("/register", function (req, res) {
-  //   res.render('register');
-  // });
-  // app.get("/register", function (req, res) {
-  //   res.render('log');
-  // });
-  
-  // app.get("/style", function (req, res) {
-  //   res.sendFile(__dirname + '/views/style.css');
-  // });
-  
-
-
-
   //connect to server
 app.listen(3400,()=>{
     console.log("server is running http://localhost3400");
