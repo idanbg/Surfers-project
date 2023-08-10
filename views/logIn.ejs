@@ -4,44 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  
-<link rel="stylesheet" href="log.css">
-<title>Log In</title>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="log.css">
+  <title>Log In</title>
 </head>
 <body class="bg-img" style="background-image:url('/pics/golshim.jpeg');" >
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
-  
       <!-- Icon -->
       <div class="fadeIn first mt-4">
         <div class="modal-dialog" role="document">
           <div class="modal-content rounded-4 shadow">
             <div class="modal-header p-5 pb-4 border-bottom-0">
-              <h1 class="fw-bold mb-0 fs-2">Log in</h1>
+              <h1 class="fw-bold mb-0 fs-2">Sign In</h1>
               <a type="button" class="btn-close" href="/"></a>
             </div>
   
-      <!-- Login Form -->
-      <form action="/login" method="post">
-        <input type="text" id="name" class="fadeIn second" name="name" placeholder="User Name">
-        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
-        <input type="submit" class="fadeIn fourth" value="Log In">
-        <!--<button type="submit">Login</button>-->
-      
-        <hr class="my-4">
-      </form>
-      <!-- Register -->
-      <div id="formFooter ">
-       <p> <a class="underlineHover" href="/register"><bold>Create Account</bold></a></p>
+            <% if (typeof error !== 'undefined') { %>
+              <div class="alert alert-danger" role="alert">
+                <%= error %>
+              </div>
+            <% } %>
+  
+            <!-- Login Form -->
+            <form action="/login" method="post" onsubmit="return validateForm();">
+              <input type="text" id="name" class="fadeIn second" name="name" placeholder="User Name">
+              <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+              <input type="submit" class="fadeIn fourth" value="Log In">
+              <div id="errorMessage" style="color: red;"></div> <!-- Error message will appear here -->
+              <hr class="my-4">
+              <input type="hidden" name="redirectURL" value="<%= redirectURL %>">
+            </form>
+            
+            <!-- Register -->
+            <div id="formFooter ">
+              <p><a class="underlineHover" href="/register?redirectURL=<%= encodeURIComponent(redirectURL) %>"><bold>Create Account</bold></a></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   
- <script src="main.js"></script>
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var password = document.getElementById("password").value;
+      var errorMessage = document.getElementById("errorMessage");
+  
+      if (!name) {
+        errorMessage.textContent = "You need to enter username";
+        return false; // Prevent form submission
+      }
+  
+      if (!password) {
+        errorMessage.textContent = "You need to enter password";
+        return false; // Prevent form submission
+      }
+  
+      return true; // Allow form submission
+    }
+  </script>
 </body>
 </html>

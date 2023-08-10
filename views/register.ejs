@@ -24,35 +24,18 @@
                   <a type="button" class="btn-close" href="/"></a>
                 </div>
       <!-- Register Form -->
-      <form action="/register" method="POST" id="register-form">
+      <form action="/register" method="POST" id="register-form" onsubmit="return validateRegisterForm();">
         <input type="text" id="name" class="fadeIn second" name="name" placeholder="User Name" >
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" >
         <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email" >
         <input type="submit" class="fadeIn fourth" value="Sign Up">
-        <p><small class="text-body-secondary">By clicking Sign Up, you agree to the terms of use.</small></p> 
-         <hr class="my-4">
-       </form>
-       <!-- <script>
-  document.querySelector('#register-form').addEventListener('submit', async(event)=> {
-    event.preventDefault();
-
-    var formData = new FormData(this);
-
-    fetch('/users', {
-      method: 'POST',
-      body: formData,
-    })
-    .then(response => response.json())
-    .then(data => {
-      alert(data.message);
-
-      // Redirect to the homepage after 1 second
-      setTimeout(function() {
-        window.location.href = '/'; // Redirect to the homepage
-      }, 1000);
-    });
-  });
-</script> -->
+        <div id="registerErrorMessage" style="color: red;"></div> <!-- Error message will appear here -->
+        <p><small class="text-body-secondary">By clicking Sign Up, you agree to the terms of use.</small></p>
+        <input type="hidden" name="redirectURL" value="<%= redirectURL %>">
+        <hr class="my-4">
+      </form>
+      
+       
        
       <!-- Register -->
       <div id="formFooter">
@@ -60,6 +43,34 @@
       </div>
     </div>
   </div>
+
+
+  <script>
+    function validateRegisterForm() {
+      var name = document.getElementById("name").value;
+      var password = document.getElementById("password").value;
+      var email = document.getElementById("email").value;
+      var errorMessage = document.getElementById("registerErrorMessage");
+  
+      if (!name) {
+        errorMessage.textContent = "You need to enter username";
+        return false; // Prevent form submission
+      }
+  
+      if (!password) {
+        errorMessage.textContent = "You need to enter password";
+        return false; // Prevent form submission
+      }
+  
+      if (!email) {
+        errorMessage.textContent = "You need to enter email";
+        return false; // Prevent form submission
+      }
+  
+      return true; // Allow form submission
+    }
+  </script>
+  
 </body>
 </html>
 
