@@ -8,16 +8,16 @@
 <div id="mainImg" class="carousel carousel-slide">
   <img class="d-block w-100" src="/pics/Category-Carousel 3.jpeg"  >
 </div>
-  <form action="/other" method="post">
-    <div class="sorting-container">
-      <label for="sorting">Sort By:</label>
-      <select id="sorting" name="sorting">
-        <option value="name">Name</option>
-        <option value="price">Price</option>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Click to sort</button> <!-- Add class and type attribute -->
-  </form>
+<form action="/other" method="post">
+  <div class="sorting-container">
+    <label class="sorting-label" for="sorting">Sort By:</label>
+    <select id="sorting" name="sorting">
+      <option value="name">Name</option>
+      <option value="price">Price</option>
+    </select>
+    <button type="submit" class="sort-button">Sort</button>
+  </div>
+</form>
 <!------Prod Cards------->
 <form action="/other/Addto" method="post">
 <div id="men-prod" class="album py-5 bg-body-tertiary align-items-center" >
