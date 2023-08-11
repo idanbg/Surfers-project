@@ -46,7 +46,7 @@
           <a class="nav-link" href="/cart">Cart</a>
           <li class="nav-item">
             <a class="nav-link" href="/search">Search</a>
-        </li>
+          </li>
             <% if(permission==1) {%>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin">Admin</a>
@@ -55,16 +55,25 @@
       </ul>
       
       <ul class="navbar-nav ms-auto"> <!-- This will align the links to the right -->
-        <li class="nav-item">
+        
             <% if(status=='Guest'){%>
+              <li class="nav-item">
           <a class="nav-link" href="/login">Sign In/Up</a>
+        </li>
                 <%}%>
                 <%if(status!='Guest'){%>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/orders">Orders</a>
+                  </li>
+
+                  <li class="nav-item"></li>
                     <form action="/delCk" method="post">
                         <button action ="/delCk" class="nav-link" >Log Out</button>
                       </form>
+                    </li>
+                      
                 <%}%>
-        </li>
+        
       </ul>
     </div>
   </div> 

@@ -67,6 +67,8 @@ app.use('/addproduct',addproductRouter);
 const checkOutRouter = require('./backend/routs/check');
 app.use('/check',checkOutRouter);
 
+const myOrdersRouter = require('./backend/routs/orders');
+app.use('/orders',myOrdersRouter);
 
 
 

@@ -75,7 +75,7 @@ router.post('/', async (req, res) => {
 
         await order.insertMany(orderItems);
         res.clearCookie('ProductCart');
-        res.redirect('/cart');
+        res.redirect('/orders');
       } catch (error) {
         console.error('Error adding order to database:', error);
         res.send('Error adding order to database');

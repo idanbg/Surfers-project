@@ -1,0 +1,49 @@
+<%- include('header')%>
+
+<div id="mainImg" class="carousel carousel-slide">
+    <img class="d-block w-100" src="pics/golshim4 2.jpeg">
+</div>
+
+<div style="background-image: url('pics/Sand-Background 2.avif');" class="cart-page">
+    <h1>My Orders</h1>
+    <% if (orders.length === 0) { %>
+      <h4 id="empty">There is no orders</h4>
+    <% } else { %>
+        <% let orderGroup ={};%>
+        <%orders.forEach((order)=>{%>
+            <% if (!orderGroup[order.ordernumber]){%>
+                <%orderGroup[order.ordernumber]=[];%>
+                <%}%>
+                <%orderGroup[order.ordernumber].push(order);%>
+    <%}) %>
+    <% Object.keys(orderGroup).forEach((orderNumber)=>{%>
+        <div class="table-responsive-lg">
+            <table class="table">
+                <caption>Order Number: <%=orderNumber%></caption>
+                <thead>
+                    <tr>
+                        <th>Product name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%orderGroup[orderNumber].forEach((order)=>{%>
+                            <tr>
+                                <td><%= order.productName %></td>
+                                <td><%= order.quantity%></td>
+                                <td><%= order.price %></td>
+                                <td><img class="card-img-top" style="width:50px" height="50px" src="<%= order.picture %>" alt="Product Image" /></td>                               
+                            </tr>     
+                            <%})%>                                      
+                </tbody>
+            </table>
+            <!-- Added hidden input for totalPrice here -->            
+        </div> 
+        <%})%>   
+        <%}%> 
+    
+</div>
+
+<%- include('footer')%>
