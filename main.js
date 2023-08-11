@@ -64,6 +64,12 @@ app.use('/register',registerRouter);
 const addproductRouter = require('./backend/routs/register');
 app.use('/addproduct',addproductRouter);
 
+const checkOutRouter = require('./backend/routs/check');
+app.use('/check',checkOutRouter);
+
+
+
+
   //connect to server
 app.listen(3400,()=>{
     console.log("server is running http://localhost3400");

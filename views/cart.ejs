@@ -5,7 +5,7 @@
 </div>
 
 <div style="background-image: url('pics/Sand-Background 2.avif');" class="cart-page">
-    <h1 >My Cart</h1>
+    <h1>My Cart</h1>
     <% if (cartItems.length === 0) { %>
       <h4 id="empty">The Cart is Empty</h4>
     <% } else { %>
@@ -60,6 +60,8 @@
                 </tbody>
             </table>
             <p>The total price is: <%= totalPrice %> $</p>
+            <!-- Added hidden input for totalPrice here -->
+            <input type="hidden" name="totalPrice" value="<%= totalPrice %>">
             <button type="submit" name="action" value="buy" class="delete-button">Buy</button>
         </div>
       </form>
