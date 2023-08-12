@@ -11,10 +11,11 @@ router.use(cookieParser());
 
 router.get('/', async (req, res) => {
   const username = req.cookies.username;
+  const permission = req.cookies.permission;
 
   if (username) {
     console.log(username);
-    res.render('login', { status: username });
+    res.render('login', { status: username ,permission : permission});
   } else {
     res.render('login', { status: 'Guest' });
   }
@@ -51,6 +52,7 @@ router.post('/', async (req, res) => {
       }
       res.cookie('username',name);
       res.cookie('permission',user.permission);
+      console.log(user.permission);
       res.render('homePage', { 
         status: user.name || 'Guest',
         permission: user.permission || 0 
