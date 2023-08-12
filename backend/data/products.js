@@ -131,7 +131,9 @@ const products=[
         price: 14.99,
         picture:"./pics/SumBum.webp" ,
         category:"More" ,
-        quantity:123 
+        quantity:123 ,
+        gender:"other"  
+
     },//
     
     {
@@ -139,7 +141,9 @@ const products=[
         price:29.99 ,
         picture:"./pics/matkot.avif" ,
         category:"More" ,
-        quantity:100 
+        quantity:100 ,
+        gender:"other"  
+
     },//
     
     {
@@ -147,7 +151,9 @@ const products=[
         price:39.99 ,
         picture:"./pics/mikasa-yellow.webp" ,
         category:"More" ,
-        quantity:182  
+        quantity:182  ,
+        gender:"other"  
+
     },//
     
     {
@@ -155,7 +161,9 @@ const products=[
         price:34.99 ,
         picture:"./pics/Mikasa.webp" ,
         category:"More" ,
-        quantity:79  
+        quantity:79  ,
+        gender:"other"  
+
     },//
     
     {
@@ -163,14 +171,16 @@ const products=[
         price:24.99 ,
         picture:"./pics/Polarbox.webp" ,
         category:"More" ,
-        quantity:99 
+        quantity:99 ,
+        gender:"other"  
+
     },//
     {
         name:"Sun Trip Tiki One-Piece Swimsuit" ,
         price: 109.95,
         picture:"/=./pics/Sun-Trip.jpeg" ,
         category:"female" ,
-        quantity:80
+        quantity:80 
     },
     {
         name:"Beach Vibes Beach Cover-Up" ,
@@ -282,7 +292,9 @@ const products=[
         price: 89.95,
         picture:"./pics/jbl.jpg" ,
         category:"more" ,
-        quantity:99
+        quantity:99 ,
+        gender:"other"  
+
     },
     {
         name:"Neso 1 Sunshade" , 
