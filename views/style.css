@@ -115,6 +115,24 @@
   margin: 0; /* Remove any margin */
 
 }
+.orders-page {
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  background-image: url("pics/Sand-Background 2.avif");
+  background-size: cover; /* כך שהתמונה תכסה את כל הרקע */
+ 
+
+}
+.search-page{
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  background-image: url("pics/Sand-Background 2.avif");
+  background-size: cover; /* כך שהתמונה תכסה את כל הרקע */
+ 
+
+}
 .wish-page {
   font-weight: bold;
   text-align: center;
