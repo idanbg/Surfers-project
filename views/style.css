@@ -8,7 +8,9 @@
   .sorting-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+      margin-bottom: 20px;
   }
 
   .sorting-label {
@@ -137,3 +139,35 @@
   background-color: transparent; /* Set the background color to transparent */
 
 }
+
+/* ... (your existing CSS rules) ... */
+
+.product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2); /* Add a background color for better visibility */
+}
+
+.product-image {
+  max-width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.product-details {
+  flex: 1;
+  text-align: center;
+}
+.admincon{
+  align-items: center;
+  font-weight: bold;
+
+  text-align: center;
+
+
+}
+/* ... (your existing CSS rules) ... */
+
