@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false); // Set the strictQuery option
 const path=require('path');
 const url = "mongodb+srv://Golshim123:Golshim123@webdevproject.k2obzer.mongodb.net/surfDB";
 // Serve static files from the 'public' folder
