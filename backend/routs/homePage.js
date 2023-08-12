@@ -11,7 +11,7 @@ router.use(cookieParser());
 
 router.get('/', (req, res) => {
     const username = req.cookies.username;
-    const permission = req.cookies.Permission;
+    const permission = req.cookies.permission;
     console.log(username);
     console.log(permission);
 
