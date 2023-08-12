@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const path=require('path');
 const Product=require('../models/product');
+const order=require('../models/order');
 
 
 
@@ -10,7 +11,7 @@ const Product=require('../models/product');
 router.get('/', async (req, res) => {                       
     console.log("admin");
     const nProducts = await Product.countDocuments();
-    const nOrders = 23;             //await Order.countDocuments(); 
+    const nOrders = await order.countDocuments();             //await Order.countDocuments(); 
     const nSales = 12;              //await Order.countDocuments({ status: 'delivered' }); 
     res.render('admin', {
         nproducts: nProducts,
