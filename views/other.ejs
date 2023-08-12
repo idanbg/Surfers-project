@@ -10,15 +10,14 @@
   </div>
   <div  style="background-image: url('pics/Sand-Background 2.avif');">
     <form action="/other" method="post">
-      <div class="sorting-container">
-        <label class="sorting-label" for="sorting">Sort By:</label>
-        <select id="sorting" name="sorting"
-        style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">>
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-        </select>
-        <button type="submit" class="btn btn-sm btn-dark rounded-pill">Sort</button>
-      </div>
+    <div class="sorting-container">
+      <label class="sorting-label" for="sorting">Sort By:</label>
+      <select id="sorting" name="sorting">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+      <button type="submit" class="sort-button">Sort</button>
+    </div>
   </form>
 <!------Prod Cards------->
 <form action="/other/Addto" method="post">

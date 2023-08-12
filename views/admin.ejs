@@ -1,85 +1,100 @@
-<%- include('header')%>
 
+            <!--end of header-->
 
-<!--------------->
-<!--MAIN PIC-->
-<div id="mainImg" class="carousel carousel-slide">
-    <img class="d-block w-100" src="/pics/Footvolley.jpg">
-  </div>
-  <div class="admincon">
-  <div  style="background-image: url('pics/Sand-Background 2.avif');">
+            <!--sidebar-->
+            <aside class="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-symbols-outlined">inventory</span> Surfshop Admin
+                    </div>
+                    <span class="material-symbols-outlined" onclick="closeSidebar()">close</span>
+                </div>
+                  
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">dashboard</span>DashBoard
+                    </li> 
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>Add Products
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">inventory_2</span>Remove products
+                    </li>
+                     
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">fact_check</span>Inventory
+                    </li>
+                  
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">shopping_cart</span>Sales Order
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">poll</span>Reports
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">settings</span>Settings
+                    </li>
+                </ul>
+            </aside>
+            <!--end of sidebar-->
+               
+            <!--main-->
+            <main class="main-container">
+                <div class="main-title">
+                    <p class="font-weight-bold">DASHBOARD</p>
+                </div>
+                    
+                    <div class="main-cards">
 
-  <h1>Admin Page</h1>
-  <br>
-  <h2>Add Product</h2>
-  <form action="/admin/add" method="post">
-    <input type="text" name="name" placeholder="Product Name" required
-    style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-    <input type="text" name="price" placeholder="Price" required
-    style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-    <input type="text" name="picture" placeholder="Picture URL" required
-    style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-    <input type="text" name="category" placeholder="Category" required
-    style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-    <input type="number" name="quantity" placeholder="Quantity" required
-    style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-    <select name="gender"
-    style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-      <option value="male">male</option>
-      <option value="female">female</option>
-      <option value="other">other</option>
-    </select>
-    <button class="btn btn-sm btn-dark rounded-pill" type="submit">Add Product</button>
-  </form>
-<br><br>
-  <!-- admin.ejs -->
+                        <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary"> PRODUCTS</p>
+                            <span class="material-symbols-outlined text-blue">inventory_2</span>
+                        </div>
+                        <span class="text-primary font-weight-bold"> <%=nproducts%></span>
+                    </div>
 
-<h2>Update/Delete Products</h2>
-<ul>
-  <% products.forEach(product => { %>
-    <br>
-    <li>
-      <div class="product-info">
-        <div class="product-details">
-            <img src="<%= product.picture %>" alt="<%= product.name %> Image" class="product-image">
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary"> PURCHASE ORDER</p>
+                            <span class="material-symbols-outlined text-orange">add_shopping_cart</span>
+                        </div>
+                        <span class="text-primary font-weight-bold"> <%=norders%></span>
+                    </div>
 
-          <div><%= product.name %> , <%= product.price %> , <%= product.category %> , <%= product.gender %></div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary"> SALES ORDERS</p>
+                            <span class="material-symbols-outlined text-green">shopping_cart</span>
+                        </div>
+                        <span class="text-primary font-weight-bold"> <%=nsales%></span>
+                    </div>
+
+                </div>
+
+                <div class="charts">
+
+                    <div class="charts-card">
+                        <p class="charts-title">Top 5 Products</p>
+                        <div id="bar-chart"></div>
+                    </div>
+
+                    <div class="charts-card">
+                        <p class="charts-title">Purchase and Sales Orders</p>
+                        <div id="area-chart"></div>
+                    </div>
+                </div>
+            </main>
+            <!--end of main-->
         </div>
-      </div>
-      <div>
-      <form action="/admin/delete/<%= product._id %>" method="post" style="display:inline;">
-        <button class="btn btn-sm btn-dark rounded-pill" type="submit">Delete Product</button>
-      </form>
-    </div>
-    <br>
-    <div>
-      <form action="/admin/update/<%= product._id %>" method="post" style="display:inline;">
-        <!-- Populate the input fields with current product details -->
-        <input type="text" name="name" placeholder="New Name" value="<%= product.name %>"
-        style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-        <input type="text" name="price" placeholder="New Price" value="<%= product.price %>"
-        style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-        <input type="text" name="picture" placeholder="New Picture URL" value="<%= product.picture %>"
-        style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-        <input type="text" name="category" placeholder="New Category" value="<%= product.category %>"
-        style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-        <input type="number" name="quantity" placeholder="New Quantity" value="<%= product.quantity %>"
-        style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-        <select name="gender"
-        style="padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-          <option value="male" <%= product.gender === 'male' ? 'selected' : '' %>>male</option>
-          <option value="female" <%= product.gender === 'female' ? 'selected' : '' %>>female</option>
-          <option value="unisex" <%= product.gender === 'other' ? 'selected' : '' %>>other</option>
-        </select>
-        <button class="btn btn-sm btn-dark rounded-pill" type="submit">Update Product</button>
-      </form>
-    </div>
-    </li>
-  <% }); %>
-</ul>
-
-</div>
-</div>
 
 
-<%- include('footer')%>
+<!--scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js" integrity="sha512-bp/xZXR0Wn5q5q5q5TgPtz7EbgZlRrIU3tsqoROPe9sLwdY6Z+0p6XRzr7/JzqQUfTSD3rWanL6WUVW7peD4zSY/vQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="admin.js"></script>
+<!--apexcharts-->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.8.6"></script>
+
+
+    </body>
+</html>
