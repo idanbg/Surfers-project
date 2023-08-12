@@ -54,15 +54,14 @@ app.use('/login',loginRouter);
 const wishRouter = require('./backend/routs/wishlist');
 app.use('/wishlist',wishRouter);
 
-
 const adminRouter = require('./backend/routs/admin');
 app.use('/admin',adminRouter);
 
 const registerRouter = require('./backend/routs/register');
 app.use('/register',registerRouter);
 
-const addproductRouter = require('./backend/routs/register');
-app.use('/addproduct',addproductRouter);
+// const addproductRouter = require('./backend/routs/addproduct');
+// app.use('/addproduct',addproductRouter);
 
 const checkOutRouter = require('./backend/routs/check');
 app.use('/check',checkOutRouter);
