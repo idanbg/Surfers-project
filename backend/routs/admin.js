@@ -3,23 +3,35 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const path = require('path'); 
 const cookieParser = require('cookie-parser');
-const Product = require("../models/product"); 
+const Product = require("../models/product");
+const Order = require("../models/order"); // Import the Order model
 
 // MiddleWare
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 
+/// Inside your router
+router.get('/', async (req, res) => {
+  try {
+    const products = await Product.find(); 
+    const orders = await Order.find();
+    const ordersByProductName = {}; 
 
-// Display the admin panel
-router.get('/', (req, res) => {
-  // Fetch products from the database
-  Product.find({}, (err, products) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send('Internal Server Error');
-    }
-    res.render('admin', { products }); // Render the admin page with product data
-  });
+    // Calculate orders by product name
+    orders.forEach(order => {
+      const productName = order.productName; // Use order.productName
+      if (!ordersByProductName[productName]) {
+        ordersByProductName[productName] = 1;
+      } else {
+        ordersByProductName[productName]++;
+      }
+    });
+
+    res.render('admin', { products, ordersByProductName }); // Pass ordersByProductName
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 // Add a new product
