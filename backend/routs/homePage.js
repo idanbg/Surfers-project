@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
     const username = req.cookies.username;
     const permission = req.cookies.Permission;
     console.log(username);
+    console.log(permission);
+
     if (username) {
         console.log(username);
       res.render('homePage', { status: username,permission:permission });
