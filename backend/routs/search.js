@@ -7,17 +7,16 @@ const Product = require("../models/product");
 
 const publicPath = path.join(__dirname, '../public');
 
-// Add bodyParser and cookieParser middleware
+
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 router.use(express.static(publicPath));
 
 
 router.get('/', async (req, res) => {
-    res.render('search'); // Assuming you have a search.ejs view file
+    res.render('search'); 
   });
   
-  // POST route for searching products
   // POST route for searching products
   router.post('/search', async (req, res) => {
       try {

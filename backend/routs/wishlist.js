@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const Product = require("../models/product"); 
 
-// Add bodyParser and cookieParser middleware
+
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     // Retrieve the product data from the database for each product in the cart
     const productNames = cartItems.map(item => item.name);
     const products = await Product.find({ name: { $in: productNames } });
-    // console.log(productNames);
+    
     // console.log(products);
 
 
@@ -93,7 +93,7 @@ router.post('/',async(req,res)=>{
     console.log("object2");
       // Clear the cart items
       res.clearCookie('ProductWishList');
-      res.redirect('/wishList'); // Redirect to the orders page or any other desired destination
+      res.redirect('/wishList'); 
   }
 }
 });
