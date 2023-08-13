@@ -64,11 +64,9 @@ router.post('/', async (req, res) => {
   
               orderItems.push(orderItem);
             } else {
-              // Insufficient quantity or invalid selected quantity, handle accordingly (e.g., show error message)
               console.error('Insufficient quantity or invalid selected quantity for:', productName);
             }
           } else {
-            // Product not found, handle accordingly (e.g., show error message)
             console.error('Product not found:', productName);
           }
         }

@@ -31,7 +31,6 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
   //routes
-  
 const homeRouts = require('./backend/routs/homePage');
 app.use("/", homeRouts);
 
