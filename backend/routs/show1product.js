@@ -4,11 +4,11 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const Product = require("../models/product"); 
 
-// Add bodyParser middleware
+
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(cookieParser());
 
-// Change the route path to include a dynamic parameter for the product name
+
 router.get('/:productName', async (req, res) => {
     try {
         const productName = req.params.productName; // Access the value of the productName parameter
