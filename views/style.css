@@ -89,17 +89,7 @@
     color: white;
   }
   
-   /* #men-prod {
-    background-color: rgba(255, 255, 255, 0.5);
-  } */
-  
-  /* #men-prod {
-    background-image: url('/views/pics/golshim2%202.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-/* Add this to your existing CSS */
+   
 .cart-page {
   font-weight: bold;
   text-align: center;
@@ -140,7 +130,7 @@
   width: 100%;
   height: 100vh; /* גובה המסך */
   background-image: url("pics/Sand-Background 2.avif");
-  background-size: cover; /* כך שהתמונה תכסה את כל הרקע */
+  background-size: cover; 
   background-position: center; /* מרכז התמונה יהיה מרכז הרקע */
   background-repeat: no-repeat; /* אין חזרה של התמונה */
   background-color: transparent; /* Set the background color to transparent */
@@ -151,14 +141,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Ensures that the container takes at least the full viewport height */
+  min-height: 100vh; 
 }
 .cart{
-  background-color: transparent; /* Set the background color to transparent */
+  background-color: transparent; 
 
 }
 
-/* ... (your existing CSS rules) ... */
 
 .product-item {
   display: flex;
@@ -166,7 +155,7 @@
   justify-content: space-between;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.2); /* Add a background color for better visibility */
+  background-color: rgba(0, 0, 0, 0.2); 
 }
 
 .product-image {
@@ -187,5 +176,4 @@
 
 
 }
-/* ... (your existing CSS rules) ... */
 

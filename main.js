@@ -31,6 +31,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
   //routes
+  
 const homeRouts = require('./backend/routs/homePage');
 app.use("/", homeRouts);
 
@@ -63,9 +64,6 @@ app.use('/admin',adminRouter);
 
 const registerRouter = require('./backend/routs/register');
 app.use('/register',registerRouter);
-
-// const addproductRouter = require('./backend/routs/addproduct');
-// app.use('/addproduct',addproductRouter);
 
 const checkOutRouter = require('./backend/routs/check');
 app.use('/check',checkOutRouter);
