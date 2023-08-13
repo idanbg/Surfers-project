@@ -1,5 +1,5 @@
 <%- include('header')%>
-
+<link rel="stylesheet" href="admin.css">
 <!--------------->
 <!--MAIN PIC-->
 <div id="mainImg" class="carousel carousel-slide">
@@ -69,7 +69,7 @@
                             <option value="male" <%= product.gender === 'male' ? 'selected' : '' %>>male</option>
                             <option value="female" <%= product.gender === 'female' ? 'selected' : '' %>>female
                             </option>
-                            <option value="unisex" <%= product.gender === 'other' ? 'selected' : '' %>>other
+                            <option value="other" <%= product.gender === 'other' ? 'selected' : '' %>>other
                             </option>
                         </select>
                         <button class="btn btn-sm btn-dark rounded-pill" type="submit">Update Product</button>
@@ -84,12 +84,11 @@
 <canvas id="ordersByProductNameChart" width="400" height="200"></canvas>
 
 <%- include('footer')%>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // Retrieve the data passed from the server
-    const ordersByProductName = <=% ordersByProductName%>
-
+    const ordersByProductName =  <%- JSON.stringify(ordersByProductName) %>;
     const ordersByProductNameCtx = document.getElementById('ordersByProductNameChart').getContext('2d');
     const ordersByProductNameChart = new Chart(ordersByProductNameCtx, {
         type: 'bar',
@@ -116,3 +115,19 @@
 </script>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
